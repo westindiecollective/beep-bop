@@ -16,11 +16,19 @@ const actions = require('./actions');
 
 const defaultState = {
   uuid: undefined,
+  username: undefined,
+  role: undefined,
 };
 
 const reducer = handleActions({
-  HELLO_CLIENT: (state, { uuid }) => ({
-    uuid,
+  ENTER_LOBBY: (state, { payload: { username } }) => ({
+    ...state,
+    username,
+  }),
+  ADDED_TO_LOBBY: (state, { payload: { role } }) => ({
+    ...state,
+    role,
+    theme: parseInt(Math.random() * 140),
   }),
 }, defaultState);
 
