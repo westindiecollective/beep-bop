@@ -12,14 +12,15 @@ const middleware = (options) => {
     const wss = new WebSocket.Server({ port });
 
     wss.on('connection', function connection(ws) {
-      const id = uuid.v4();
+      const key = ws.upgradeReq.headers['sec-websocket-key'];
 
-      sockets[id] = id;
-
-      ws.send(JSON.stringify(actions.helloClient({ id })));
+      sockets[key] = key;
 
       ws.on('message', function incoming(message) {
-        store.dispatch(JSON.parse(message));
+        const action = JSON.parse(message);
+        action.meta = { key };
+        console.log(action);
+        store.dispatch(action);
       });
     });
 
