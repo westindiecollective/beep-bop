@@ -25,3 +25,5 @@ const store = createStore(
 );
 
 sagaMiddleware.run(sagas)
+
+console.log('Server running…');
