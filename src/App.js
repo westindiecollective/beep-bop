@@ -7,10 +7,11 @@ import actions from './actions';
 import Player from './Player/';
 import Host from './Host/';
 
-const mapStateToProps = ({ username, role }) => {
+const mapStateToProps = ({ username, role, theme }) => {
   return {
     username,
     role,
+    theme,
   };
 };
 
@@ -28,12 +29,11 @@ class App extends Component {
   }
 
   render() {
-    const { username, role } = this.props;
+    const { username, role, theme } = this.props;
     const host = false;
-    const theme = 'theme-t2';
 
     return (
-      <div className={"App " + theme}>
+      <div className={theme ? `App theme-t${theme}` : 'App'}>
         <div className="App-header">
           <div className="App-title">BeepBop.</div>
         </div>
