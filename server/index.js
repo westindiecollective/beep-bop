@@ -3,26 +3,15 @@ const { handleActions } = require('redux-actions');
 const createSagaMiddleware = require('redux-saga').default;
 
 const actions = require('../src/actions');
+const reducers = require('./reducers');
 const sagas = require('./sagas');
 const createSocketMiddleware = require('./sockets');
-
-const defaultState = {
-  host: undefined,
-  master: undefined,
-  players: {},
-};
-
-const reducer = handleActions({
-  HELLO_SERVER: (state, action) => ({
-      host: uuid,
-  }),
-}, defaultState);
 
 const sagaMiddleware = createSagaMiddleware();
 const socketMiddleware = createSocketMiddleware({ port: 4000 });
 
 const store = createStore(
-  reducer,
+  reducers,
   applyMiddleware(sagaMiddleware, socketMiddleware)
 );
 
