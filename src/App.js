@@ -19,16 +19,16 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <div className="App-title">Here comes the logo!</div>
+          {/*<img src={logo} className="App-logo" alt="logo" />*/}
+          <div className="App-title">BeepBop.</div>
         </div>
+        <div className="App-container">
         {
           username
             ? master
               ? <Master username={username} />
               : <Player username={username} />
             : <form
-              className="App-container"
               onSubmit={e => {
                   this.setState({ username: e.target['username'].value });
 
@@ -38,11 +38,12 @@ class App extends Component {
             >
               <p>Please enter your username</p>
               <div>
-              <input type="text" placeholder="Jean-Michel Jam" name="username" />
+              <input type="text" placeholder="Jean-Michel Jam" name="username" maxLength="20" autofocus />
               <button>Play!</button>
               </div>
             </form>
         }
+        </div>
       </div>
     );
   }
