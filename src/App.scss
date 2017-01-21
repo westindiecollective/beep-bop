@@ -42,6 +42,7 @@
       text-align: center;
       left: 0;
       right: 0;
+      font-family: "Lucida Console";
     }
   }
 
@@ -80,11 +81,12 @@
       vertical-align: top;
       border: solid 3px black;
       border-right: none;
-      box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
       font-size: 30px;
+      font-weight: bold;
 
       + button {
-        transition: all ease-in-out .1s;
+        transition: all ease-in-out .01s;
         display: inline-block;
         height: 60px;
         border-radius: 0 5px 5px 0;
@@ -95,7 +97,7 @@
         background: forestgreen;
         font-size: 0;
         vertical-align: top;
-        box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
         line-height: 15px;
         outline: none;
         cursor: pointer;
@@ -113,6 +115,62 @@
 
         &:active {
           background: green;
+        }
+      }
+    }
+
+    .Master, .Player {
+      .username {
+        text-transform: capitalize;
+      }
+    }
+
+    .Game {
+      .Situation {
+        position: relative;
+        padding: 50px 15px;
+        margin: 0;
+        border: 10px solid #36366d;
+        text-align: center;
+        color: #333;
+        background: #fff;
+        border-radius: 20px;
+
+        $left: 10%;
+
+        &:before, &:after {
+          content: "";
+          position: absolute;
+          z-index: 10;
+          bottom: -40px;
+          left: calc(50px * #{$left});
+          height: 30px;
+          border-style: solid;
+          border-width: 0 10px 10px 0;
+          border-color: #36366d;
+          background: transparent;
+          display: block;
+        }
+
+        &:before {
+          width: 50px;
+          border-bottom-right-radius: 80px 50px;
+        }
+
+        &:after {
+          width: 20px;
+          border-bottom-right-radius: 40px 50px;
+        }
+
+        .Dialog-bg {
+          position: absolute;
+          z-index: 0;
+          bottom: -27px;
+          left: calc(50px * #{$left});
+          width: 30px;
+          height: 27px;
+          border-bottom-right-radius: 80px 50px;
+          background: white;
         }
       }
     }

@@ -30,7 +30,8 @@
       position: absolute;
       text-align: center;
       left: 0;
-      right: 0; }
+      right: 0;
+      font-family: "Lucida Console"; }
   .App .App-container {
     position: absolute;
     top: 50px;
@@ -64,9 +65,10 @@
       border: solid 3px black;
       border-right: none;
       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-      font-size: 30px; }
+      font-size: 30px;
+      font-weight: bold; }
       .App .App-container input + button {
-        transition: all ease-in-out .1s;
+        transition: all ease-in-out .01s;
         display: inline-block;
         height: 60px;
         border-radius: 0 5px 5px 0;
@@ -92,5 +94,43 @@
           border-color: transparent transparent transparent white; }
         .App .App-container input + button:active {
           background: green; }
+    .App .App-container .Master .username, .App .App-container .Player .username {
+      text-transform: capitalize; }
+    .App .App-container .Game .Situation {
+      position: relative;
+      padding: 50px 15px;
+      margin: 0;
+      border: 10px solid #36366d;
+      text-align: center;
+      color: #333;
+      background: #fff;
+      border-radius: 20px; }
+      .App .App-container .Game .Situation:before, .App .App-container .Game .Situation:after {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        bottom: -40px;
+        left: calc(50px * 10%);
+        height: 30px;
+        border-style: solid;
+        border-width: 0 10px 10px 0;
+        border-color: #36366d;
+        background: transparent;
+        display: block; }
+      .App .App-container .Game .Situation:before {
+        width: 50px;
+        border-bottom-right-radius: 80px 50px; }
+      .App .App-container .Game .Situation:after {
+        width: 20px;
+        border-bottom-right-radius: 40px 50px; }
+      .App .App-container .Game .Situation .Dialog-bg {
+        position: absolute;
+        z-index: 0;
+        bottom: -27px;
+        left: calc(50px * 10%);
+        width: 30px;
+        height: 27px;
+        border-bottom-right-radius: 80px 50px;
+        background: white; }
 
 /*# sourceMappingURL=App.css.map */

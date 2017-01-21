@@ -17,12 +17,12 @@ class Player extends Component {
     const { username } = this.props;
 
     if (status === 'PLAYING') {
-      return <Game />;
+      return <Game/>;
     }
 
     return (
-      <div className="Master">
-        <h2>Hello {username}!</h2>
+      <div className="Player">
+        <h2>Hello <span className="username">{username}</span>!</h2>
         <p>Wait for the master to start the game!</p>
       </div>
     );
