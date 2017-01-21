@@ -1,20 +1,96 @@
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+@keyframes rotatingBg {
+  100% {
+    background-position: -30px 30px; } }
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   color: white;
-}
+  font-family: 'Impact';
+  font-size: 4vw; }
+  .App .App-header {
+    background-color: #222;
+    height: 50px;
+    text-align: left; }
+    .App .App-header .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+      height: 100%;
+      display: inline-block; }
+    .App .App-header .App-title {
+      line-height: 50px;
+      display: inline-block;
+      position: absolute;
+      text-align: center;
+      left: 0;
+      right: 0; }
+  .App .App-container {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-shadow: 1px 1px 3px black; }
+    .App .App-container:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 21.3px) top left;
+      background-size: 30px 30px;
+      animation: rotatingBg infinite 1s;
+      animation-timing-function: linear;
+      z-index: -1; }
+    .App .App-container input {
+      padding: 10px 20px;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+      max-height: 50px;
+      display: inline-block;
+      vertical-align: top;
+      border: solid 3px black;
+      border-right: none;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+      font-size: 30px; }
+      .App .App-container input + button {
+        transition: all ease-in-out .1s;
+        display: inline-block;
+        height: 60px;
+        border-radius: 0 5px 5px 0;
+        border: solid 3px black;
+        border-left: none;
+        position: relative;
+        padding: 10px 20px;
+        background: forestgreen;
+        font-size: 0;
+        vertical-align: top;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        line-height: 15px;
+        outline: none;
+        cursor: pointer; }
+        .App .App-container input + button:before {
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 7.5px 0 7.5px 10px;
+          border-color: transparent transparent transparent white; }
+        .App .App-container input + button:active {
+          background: green; }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+/*# sourceMappingURL=App.css.map */
