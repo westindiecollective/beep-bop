@@ -8,6 +8,8 @@ const createSocketMiddleware = require('./sockets');
 
 const defaultState = {
   host: undefined,
+  master: undefined,
+  players: {},
 };
 
 const reducer = handleActions({
