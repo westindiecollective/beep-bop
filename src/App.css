@@ -66,7 +66,7 @@
       box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
       font-size: 30px; }
       .App .App-container input + button {
-        transition: all ease-in-out .1s;
+        transition: all ease-in-out .01s;
         display: inline-block;
         height: 60px;
         border-radius: 0 5px 5px 0;
