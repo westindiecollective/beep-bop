@@ -6,6 +6,9 @@
 @keyframes rotatingBg {
   100% {
     background-position: -30px 30px; } }
+@keyframes antiRotatingBg {
+  100% {
+    background-position: 30px 30px; } }
 .App {
   text-align: center;
   position: fixed;
@@ -57,7 +60,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, transparent, transparent 10px, transparent 10px, transparent 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t1 .App-container .Username-prompt {
@@ -178,7 +181,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, aliceblue, aliceblue 10px, #b8deff 10px, #b8deff 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t2 .App-container .Username-prompt {
@@ -299,7 +302,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, antiquewhite, antiquewhite 10px, #f4d2a5 10px, #f4d2a5 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t3 .App-container .Username-prompt {
@@ -420,7 +423,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, aqua, aqua 10px, #00c7c7 10px, #00c7c7 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t4 .App-container .Username-prompt {
@@ -662,7 +665,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, azure, azure 10px, #b8ffff 10px, #b8ffff 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t6 .App-container .Username-prompt {
@@ -783,7 +786,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, beige, beige 10px, #e9e9b0 10px, #e9e9b0 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t7 .App-container .Username-prompt {
@@ -904,7 +907,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, bisque, bisque 10px, #ffca8c 10px, #ffca8c 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t8 .App-container .Username-prompt {
@@ -1025,7 +1028,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, black, black 10px, black 10px, black 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t9 .App-container .Username-prompt {
@@ -1267,7 +1270,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, blue, blue 10px, #0000c7 10px, #0000c7 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t11 .App-container .Username-prompt {
@@ -1388,7 +1391,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, blueviolet, blueviolet 10px, #6e1abb 10px, #6e1abb 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t12 .App-container .Username-prompt {
@@ -1509,7 +1512,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, brown, brown 10px, #781f1f 10px, #781f1f 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t13 .App-container .Username-prompt {
@@ -1630,7 +1633,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, burlywood, burlywood 10px, #d29e5b 10px, #d29e5b 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t14 .App-container .Username-prompt {
@@ -1872,7 +1875,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, chartreuse, chartreuse 10px, #63c700 10px, #63c700 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t16 .App-container .Username-prompt {
@@ -1993,7 +1996,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, chocolate, chocolate 10px, #a15017 10px, #a15017 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t17 .App-container .Username-prompt {
@@ -2114,7 +2117,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, coral, coral 10px, #ff5618 10px, #ff5618 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t18 .App-container .Username-prompt {
@@ -2235,7 +2238,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, cornflowerblue, cornflowerblue 10px, #3273e7 10px, #3273e7 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t19 .App-container .Username-prompt {
@@ -2477,7 +2480,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, crimson, crimson 10px, #a90f2e 10px, #a90f2e 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t21 .App-container .Username-prompt {
@@ -2598,7 +2601,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, cyan, cyan 10px, #00c7c7 10px, #00c7c7 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t4 .App-container .Username-prompt {
@@ -2719,7 +2722,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, darkblue, darkblue 10px, #000053 10px, #000053 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t23 .App-container .Username-prompt {
@@ -2840,7 +2843,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, darkcyan, darkcyan 10px, #005353 10px, #005353 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t24 .App-container .Username-prompt {
@@ -3082,7 +3085,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, darkgray, darkgray 10px, #8d8d8d 10px, #8d8d8d 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t26 .App-container .Username-prompt {
@@ -3203,7 +3206,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, darkgrey, darkgrey 10px, #8d8d8d 10px, #8d8d8d 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t26 .App-container .Username-prompt {
@@ -3324,7 +3327,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, darkgreen, darkgreen 10px, #002c00 10px, #002c00 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t28 .App-container .Username-prompt {
@@ -3445,7 +3448,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, darkkhaki, darkkhaki 10px, #a69f4a 10px, #a69f4a 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t29 .App-container .Username-prompt {
@@ -3687,7 +3690,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, darkolivegreen, darkolivegreen 10px, #36441e 10px, #36441e 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t31 .App-container .Username-prompt {
@@ -3808,7 +3811,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, darkorange, darkorange 10px, #c76d00 10px, #c76d00 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t32 .App-container .Username-prompt {
@@ -3929,7 +3932,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, darkorchid, darkorchid 10px, #77279f 10px, #77279f 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t33 .App-container .Username-prompt {
@@ -4050,7 +4053,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, darkred, darkred 10px, #530000 10px, #530000 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t34 .App-container .Username-prompt {
@@ -4292,7 +4295,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, darkseagreen, darkseagreen 10px, #6ca76c 10px, #6ca76c 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t36 .App-container .Username-prompt {
@@ -4413,7 +4416,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, darkslateblue, darkslateblue 10px, #342c64 10px, #342c64 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t37 .App-container .Username-prompt {
@@ -4534,7 +4537,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, darkslategray, darkslategray 10px, #1a2c2c 10px, #1a2c2c 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t38 .App-container .Username-prompt {
@@ -4655,7 +4658,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, darkslategrey, darkslategrey 10px, #1a2c2c 10px, #1a2c2c 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t38 .App-container .Username-prompt {
@@ -4897,7 +4900,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, darkviolet, darkviolet 10px, #6d009b 10px, #6d009b 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t41 .App-container .Username-prompt {
@@ -5018,7 +5021,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, deeppink, deeppink 10px, #db0076 10px, #db0076 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t42 .App-container .Username-prompt {
@@ -5139,7 +5142,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, deepskyblue, deepskyblue 10px, #0095c7 10px, #0095c7 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t43 .App-container .Username-prompt {
@@ -5260,7 +5263,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, dimgray, dimgray 10px, #4d4d4d 10px, #4d4d4d 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t44 .App-container .Username-prompt {
@@ -5381,7 +5384,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, dimgrey, dimgrey 10px, #4d4d4d 10px, #4d4d4d 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t44 .App-container .Username-prompt {
@@ -5502,7 +5505,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, dodgerblue, dodgerblue 10px, #0074e5 10px, #0074e5 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t46 .App-container .Username-prompt {
@@ -5623,7 +5626,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, firebrick, firebrick 10px, #831919 10px, #831919 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t47 .App-container .Username-prompt {
@@ -5744,7 +5747,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, floralwhite, floralwhite 10px, #ffe7b8 10px, #ffe7b8 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t48 .App-container .Username-prompt {
@@ -5865,7 +5868,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, forestgreen, forestgreen 10px, #175e17 10px, #175e17 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t49 .App-container .Username-prompt {
@@ -6107,7 +6110,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, gainsboro, gainsboro 10px, silver 10px, silver 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t51 .App-container .Username-prompt {
@@ -6228,7 +6231,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, ghostwhite, ghostwhite 10px, #c0c0ff 10px, #c0c0ff 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t52 .App-container .Username-prompt {
@@ -6349,7 +6352,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, gold, gold 10px, #c7a800 10px, #c7a800 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t53 .App-container .Username-prompt {
@@ -6470,7 +6473,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, goldenrod, goldenrod 10px, #a98019 10px, #a98019 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t54 .App-container .Username-prompt {
@@ -6833,7 +6836,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, green, green 10px, #004800 10px, #004800 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t57 .App-container .Username-prompt {
@@ -6954,7 +6957,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, greenyellow, greenyellow 10px, #95f600 10px, #95f600 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t58 .App-container .Username-prompt {
@@ -7075,7 +7078,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, honeydew, honeydew 10px, #b8ffb8 10px, #b8ffb8 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t59 .App-container .Username-prompt {
@@ -7317,7 +7320,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, indianred, indianred 10px, #b83939 10px, #b83939 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t61 .App-container .Username-prompt {
@@ -7438,7 +7441,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, indigo, indigo 10px, #2b004a 10px, #2b004a 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t62 .App-container .Username-prompt {
@@ -7559,7 +7562,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, ivory, ivory 10px, #ffffb8 10px, #ffffb8 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t63 .App-container .Username-prompt {
@@ -7680,7 +7683,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, khaki, khaki 10px, #eadb5a 10px, #eadb5a 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t64 .App-container .Username-prompt {
@@ -7922,7 +7925,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, lavenderblush, lavenderblush 10px, #ffb8d0 10px, #ffb8d0 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t66 .App-container .Username-prompt {
@@ -8043,7 +8046,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, lawngreen, lawngreen 10px, #60c400 10px, #60c400 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t67 .App-container .Username-prompt {
@@ -8164,7 +8167,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, lemonchiffon, lemonchiffon 10px, #fff495 10px, #fff495 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t68 .App-container .Username-prompt {
@@ -8285,7 +8288,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, lightblue, lightblue 10px, #82c4d9 10px, #82c4d9 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t69 .App-container .Username-prompt {
@@ -8527,7 +8530,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, lightcyan, lightcyan 10px, #a8ffff 10px, #a8ffff 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t71 .App-container .Username-prompt {
@@ -8648,7 +8651,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, lightgoldenrodyellow, lightgoldenrodyellow 10px, #f4f4a0 10px, #f4f4a0 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t72 .App-container .Username-prompt {
@@ -8769,7 +8772,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, lightgray, lightgray 10px, #b7b7b7 10px, #b7b7b7 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t73 .App-container .Username-prompt {
@@ -8890,7 +8893,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, lightgrey, lightgrey 10px, #b7b7b7 10px, #b7b7b7 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t73 .App-container .Username-prompt {
@@ -9132,7 +9135,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, lightpink, lightpink 10px, #ff7e91 10px, #ff7e91 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t76 .App-container .Username-prompt {
@@ -9253,7 +9256,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, lightsalmon, lightsalmon 10px, #ff7842 10px, #ff7842 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t77 .App-container .Username-prompt {
@@ -9374,7 +9377,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, lightseagreen, lightseagreen 10px, #17827d 10px, #17827d 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t78 .App-container .Username-prompt {
@@ -9495,7 +9498,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, lightskyblue, lightskyblue 10px, #51b8f8 10px, #51b8f8 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t79 .App-container .Username-prompt {
@@ -9858,7 +9861,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, lightsteelblue, lightsteelblue 10px, #88a6cd 10px, #88a6cd 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t82 .App-container .Username-prompt {
@@ -9979,7 +9982,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, lightyellow, lightyellow 10px, #ffffa8 10px, #ffffa8 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t83 .App-container .Username-prompt {
@@ -10100,7 +10103,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, lime, lime 10px, #00c700 10px, #00c700 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t84 .App-container .Username-prompt {
@@ -10342,7 +10345,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, linen, linen 10px, #f1d4b7 10px, #f1d4b7 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t86 .App-container .Username-prompt {
@@ -10584,7 +10587,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, maroon, maroon 10px, #480000 10px, #480000 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t88 .App-container .Username-prompt {
@@ -10705,7 +10708,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, mediumaquamarine, mediumaquamarine 10px, #3ebd92 10px, #3ebd92 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t89 .App-container .Username-prompt {
@@ -10947,7 +10950,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, mediumorchid, mediumorchid 10px, #a331bf 10px, #a331bf 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t91 .App-container .Username-prompt {
@@ -11068,7 +11071,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, mediumpurple, mediumpurple 10px, #7143d0 10px, #7143d0 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t92 .App-container .Username-prompt {
@@ -11189,7 +11192,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, mediumseagreen, mediumseagreen 10px, #2e8956 10px, #2e8956 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t93 .App-container .Username-prompt {
@@ -11310,7 +11313,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, mediumslateblue, mediumslateblue 10px, #4f36e8 10px, #4f36e8 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t94 .App-container .Username-prompt {
@@ -11552,7 +11555,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, mediumturquoise, mediumturquoise 10px, #2db4af 10px, #2db4af 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t96 .App-container .Username-prompt {
@@ -11673,7 +11676,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, mediumvioletred, mediumvioletred 10px, #941063 10px, #941063 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t97 .App-container .Username-prompt {
@@ -11794,7 +11797,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, midnightblue, midnightblue 10px, #0f0f42 10px, #0f0f42 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t98 .App-container .Username-prompt {
@@ -11915,7 +11918,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, mintcream, mintcream 10px, #bdffde 10px, #bdffde 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t99 .App-container .Username-prompt {
@@ -12157,7 +12160,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, moccasin, moccasin 10px, #ffd07d 10px, #ffd07d 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t101 .App-container .Username-prompt {
@@ -12278,7 +12281,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, navajowhite, navajowhite 10px, #ffc775 10px, #ffc775 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t102 .App-container .Username-prompt {
@@ -12399,7 +12402,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, navy, navy 10px, #000048 10px, #000048 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t103 .App-container .Username-prompt {
@@ -12520,7 +12523,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, oldlace, oldlace 10px, #f9e0b2 10px, #f9e0b2 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t104 .App-container .Username-prompt {
@@ -12762,7 +12765,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, olivedrab, olivedrab 10px, #496118 10px, #496118 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t106 .App-container .Username-prompt {
@@ -12883,7 +12886,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, orange, orange 10px, #c78100 10px, #c78100 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t107 .App-container .Username-prompt {
@@ -13004,7 +13007,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, orangered, orangered 10px, #c73600 10px, #c73600 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t108 .App-container .Username-prompt {
@@ -13125,7 +13128,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, orchid, orchid 10px, #ce43c9 10px, #ce43c9 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t109 .App-container .Username-prompt {
@@ -13367,7 +13370,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, palegreen, palegreen 10px, #62f962 10px, #62f962 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t111 .App-container .Username-prompt {
@@ -13488,7 +13491,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, paleturquoise, paleturquoise 10px, #81e4e4 10px, #81e4e4 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t112 .App-container .Username-prompt {
@@ -13609,7 +13612,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, palevioletred, palevioletred 10px, #d04371 10px, #d04371 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t113 .App-container .Username-prompt {
@@ -13730,7 +13733,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, papayawhip, papayawhip 10px, #ffda9d 10px, #ffda9d 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t114 .App-container .Username-prompt {
@@ -13972,7 +13975,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, peru, peru 10px, #a8692c 10px, #a8692c 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t116 .App-container .Username-prompt {
@@ -14093,7 +14096,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, pink, pink 10px, #ff889d 10px, #ff889d 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t117 .App-container .Username-prompt {
@@ -14214,7 +14217,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, plum, plum 10px, #ce77ce 10px, #ce77ce 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t118 .App-container .Username-prompt {
@@ -14335,7 +14338,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, powderblue, powderblue 10px, #85cfd9 10px, #85cfd9 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t119 .App-container .Username-prompt {
@@ -14577,7 +14580,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, rebeccapurple, rebeccapurple 10px, #4a256f 10px, #4a256f 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t121 .App-container .Username-prompt {
@@ -14698,7 +14701,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, red, red 10px, #c70000 10px, #c70000 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t122 .App-container .Username-prompt {
@@ -14819,7 +14822,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, rosybrown, rosybrown 10px, #a76c6c 10px, #a76c6c 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t123 .App-container .Username-prompt {
@@ -14940,7 +14943,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, royalblue, royalblue 10px, #204aca 10px, #204aca 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t124 .App-container .Username-prompt {
@@ -15182,7 +15185,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, salmon, salmon 10px, #f84f3c 10px, #f84f3c 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t126 .App-container .Username-prompt {
@@ -15303,7 +15306,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, sandybrown, sandybrown 10px, #f0862c 10px, #f0862c 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t127 .App-container .Username-prompt {
@@ -15424,7 +15427,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, seagreen, seagreen 10px, #20613d 10px, #20613d 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t128 .App-container .Username-prompt {
@@ -15545,7 +15548,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, seashell, seashell 10px, #ffd4b6 10px, #ffd4b6 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t129 .App-container .Username-prompt {
@@ -15787,7 +15790,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, silver, silver 10px, #a4a4a4 10px, #a4a4a4 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t131 .App-container .Username-prompt {
@@ -15908,7 +15911,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, skyblue, skyblue 10px, #57bae3 10px, #57bae3 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t132 .App-container .Username-prompt {
@@ -16029,7 +16032,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, slateblue, slateblue 10px, #4938b7 10px, #4938b7 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t133 .App-container .Username-prompt {
@@ -16150,7 +16153,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, slategray, slategray 10px, #576471 10px, #576471 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t134 .App-container .Username-prompt {
@@ -16271,7 +16274,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, slategrey, slategrey 10px, #576471 10px, #576471 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t134 .App-container .Username-prompt {
@@ -16392,7 +16395,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, snow, snow 10px, #ffc2c2 10px, #ffc2c2 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t136 .App-container .Username-prompt {
@@ -16513,7 +16516,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, springgreen, springgreen 10px, #00c763 10px, #00c763 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t137 .App-container .Username-prompt {
@@ -16634,7 +16637,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, steelblue, steelblue 10px, #36658c 10px, #36658c 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t138 .App-container .Username-prompt {
@@ -16755,7 +16758,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, tan, tan 10px, #c29a64 10px, #c29a64 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t139 .App-container .Username-prompt {
@@ -16997,7 +17000,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, thistle, thistle 10px, #c39cc3 10px, #c39cc3 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t141 .App-container .Username-prompt {
@@ -17118,7 +17121,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, tomato, tomato 10px, #ff330f 10px, #ff330f 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t142 .App-container .Username-prompt {
@@ -17239,7 +17242,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, turquoise, turquoise 10px, #20c8b7 10px, #20c8b7 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t143 .App-container .Username-prompt {
@@ -17360,7 +17363,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, transparent, transparent 10px, transparent 10px, transparent 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t1 .App-container .Username-prompt {
@@ -17602,7 +17605,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, wheat, wheat 10px, #eec881 10px, #eec881 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t146 .App-container .Username-prompt {
@@ -17723,7 +17726,7 @@
       right: 0;
       background: repeating-linear-gradient(0deg, white, white 10px, #e3e3e3 10px, #e3e3e3 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t147 .App-container .Username-prompt {
@@ -17844,7 +17847,7 @@
       right: 0;
       background: repeating-linear-gradient(45deg, whitesmoke, whitesmoke 10px, #d9d9d9 10px, #d9d9d9 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t148 .App-container .Username-prompt {
@@ -17965,7 +17968,7 @@
       right: 0;
       background: repeating-linear-gradient(-45deg, yellow, yellow 10px, #c7c700 10px, #c7c700 21.3px) top left;
       background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
+      animation: antiRotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
     .App.theme-t149 .App-container .Username-prompt {

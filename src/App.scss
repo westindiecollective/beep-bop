@@ -31,6 +31,12 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
   }
 }
 
+@keyframes antiRotatingBg {
+  100% {
+    background-position: 30px 30px;
+  }
+}
+
 .App {
   text-align: center;
   position: fixed;
@@ -98,7 +104,7 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
           $nth: index($themes, $color);
           background: repeating-linear-gradient(#{if($nth%2 != 0, if($nth%3 != 0, if($nth%5 != 0, -45, 90), 0), 45)}deg, $color, $color 10px, darken($color, 11%) 10px, darken($color, 11%) 21.3px) top left;
           background-size: 30px 30px;
-          animation: rotatingBg infinite 1s;
+          animation: #{if($nth%5 != 0, "antiRotatingBg", "rotatingBg")} infinite 1s;
           animation-timing-function: linear;
           z-index: -1;
         }

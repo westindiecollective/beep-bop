@@ -18,7 +18,7 @@ const defaultState = {
   uuid: undefined,
   username: undefined,
   role: undefined,
-  theme: '10',
+  theme: '11',
 };
 
 const reducer = handleActions({
