@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import logo from './logo.svg';
 import './App.css';
 
 import actions from './actions';
@@ -10,7 +9,7 @@ import Host from './Host/';
 
 const mapStateToProps = ({ username }) => {
   return {
-    username,
+    username
   };
 };
 
@@ -23,18 +22,18 @@ const mapDispatchToProps = dispatch => {
 class App extends Component {
   handleSubmit(e) {
     e.preventDefault();
-    
+
     this.props.enterLobby(e.target['username'].value);
   }
 
   render() {
     const { username } = this.props;
     const host = false;
+    const theme = 'theme-t1';
 
     return (
-      <div className="App">
+      <div className={"App " + theme}>
         <div className="App-header">
-          {/*<img src={logo} className="App-logo" alt="logo" />*/}
           <div className="App-title">BeepBop.</div>
         </div>
         <div className="App-container">
@@ -44,10 +43,10 @@ class App extends Component {
               ? <Host username={username} />
               : <Player username={username} />
             : <form onSubmit={this.handleSubmit.bind(this)}>
-              <p>Please enter your username</p>
+              <p>Welcome to <span className="App-title">BeepBop</span> !<br/><br/>Please enter your username</p>
               <div>
-              <input type="text" placeholder="Jean-Michel Jam" name="username" maxLength="20" autoFocus />
-              <button>Play!</button>
+                  <input className="Username-prompt" type="text" placeholder="Jean-Michel Jam" name="username" maxLength="20" autoFocus />
+                  <button>Play!</button>
               </div>
             </form>
         }

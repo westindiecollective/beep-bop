@@ -16,23 +16,27 @@
   color: white;
   font-family: 'Impact';
   font-size: 4vw; }
-  .App .App-header {
+  .App.theme-t1 .App-header {
     background-color: #222;
     height: 50px;
     text-align: left; }
-    .App .App-header .App-logo {
+    .App.theme-t1 .App-header .App-logo {
       animation: App-logo-spin infinite 20s linear;
       height: 100%;
       display: inline-block; }
-    .App .App-header .App-title {
+    .App.theme-t1 .App-header .App-title {
       line-height: 50px;
       display: inline-block;
       position: absolute;
       text-align: center;
       left: 0;
       right: 0;
-      font-family: "Lucida Console"; }
-  .App .App-container {
+      font-size: 40px; }
+  .App.theme-t1 .App-title {
+    font-family: "Lucida Console";
+    text-shadow: 1px 1px 0 black, 2px 2px 0 black, 3px 3px 0 black;
+    font-size: 4vw; }
+  .App.theme-t1 .App-container {
     position: absolute;
     top: 50px;
     bottom: 0;
@@ -42,20 +46,21 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    text-shadow: 1px 1px 3px black; }
-    .App .App-container:before {
+    color: #000000;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); }
+    .App.theme-t1 .App-container:before {
       content: '';
       position: absolute;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
-      background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 21.3px) top left;
-      background-size: 30px 30px;
+      background: repeating-linear-gradient(90deg, aliceblue, aliceblue 10px, #b8deff 10px, #b8deff 21.3px) top left;
+      background-size: 30px 20px;
       animation: rotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
-    .App .App-container input {
+    .App.theme-t1 .App-container .Username-prompt {
       padding: 10px 20px;
       border-radius: 5px 0 0 5px;
       outline: none;
@@ -64,10 +69,10 @@
       vertical-align: top;
       border: solid 3px black;
       border-right: none;
-      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
       font-size: 30px;
       font-weight: bold; }
-      .App .App-container input + button {
+      .App.theme-t1 .App-container .Username-prompt + button {
         transition: all ease-in-out .01s;
         display: inline-block;
         height: 60px;
@@ -79,11 +84,11 @@
         background: forestgreen;
         font-size: 0;
         vertical-align: top;
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
         line-height: 15px;
         outline: none;
         cursor: pointer; }
-        .App .App-container input + button:before {
+        .App.theme-t1 .App-container .Username-prompt + button:before {
           content: '';
           display: inline-block;
           vertical-align: middle;
@@ -92,20 +97,20 @@
           border-style: solid;
           border-width: 7.5px 0 7.5px 10px;
           border-color: transparent transparent transparent white; }
-        .App .App-container input + button:active {
+        .App.theme-t1 .App-container .Username-prompt + button:active {
           background: green; }
-    .App .App-container .Master .username, .App .App-container .Player .username {
+    .App.theme-t1 .App-container .Master .username, .App.theme-t1 .App-container .Player .username {
       text-transform: capitalize; }
-    .App .App-container .Game .Situation {
+    .App.theme-t1 .App-container .Game .Situation {
       position: relative;
       padding: 50px 15px;
       margin: 0;
-      border: 10px solid #36366d;
+      border: 10px solid #7bc1ff;
       text-align: center;
-      color: #333;
+      color: #000000;
       background: #fff;
       border-radius: 20px; }
-      .App .App-container .Game .Situation:before, .App .App-container .Game .Situation:after {
+      .App.theme-t1 .App-container .Game .Situation:before, .App.theme-t1 .App-container .Game .Situation:after {
         content: "";
         position: absolute;
         z-index: 10;
@@ -114,16 +119,379 @@
         height: 30px;
         border-style: solid;
         border-width: 0 10px 10px 0;
-        border-color: #36366d;
+        border-color: #7bc1ff;
         background: transparent;
         display: block; }
-      .App .App-container .Game .Situation:before {
+      .App.theme-t1 .App-container .Game .Situation:before {
         width: 50px;
         border-bottom-right-radius: 80px 50px; }
-      .App .App-container .Game .Situation:after {
+      .App.theme-t1 .App-container .Game .Situation:after {
         width: 20px;
         border-bottom-right-radius: 40px 50px; }
-      .App .App-container .Game .Situation .Dialog-bg {
+      .App.theme-t1 .App-container .Game .Situation .Dialog-bg {
+        position: absolute;
+        z-index: 0;
+        bottom: -27px;
+        left: calc(50px * 10%);
+        width: 30px;
+        height: 27px;
+        border-bottom-right-radius: 80px 50px;
+        background: white; }
+  .App.theme-t2 .App-header {
+    background-color: #222;
+    height: 50px;
+    text-align: left; }
+    .App.theme-t2 .App-header .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+      height: 100%;
+      display: inline-block; }
+    .App.theme-t2 .App-header .App-title {
+      line-height: 50px;
+      display: inline-block;
+      position: absolute;
+      text-align: center;
+      left: 0;
+      right: 0;
+      font-size: 40px; }
+  .App.theme-t2 .App-title {
+    font-family: "Lucida Console";
+    text-shadow: 1px 1px 0 black, 2px 2px 0 black, 3px 3px 0 black;
+    font-size: 4vw; }
+  .App.theme-t2 .App-container {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #000000;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); }
+    .App.theme-t2 .App-container:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: repeating-linear-gradient(45deg, antiquewhite, antiquewhite 10px, #f4d2a5 10px, #f4d2a5 21.3px) top left;
+      background-size: 30px 30px;
+      animation: rotatingBg infinite 1s;
+      animation-timing-function: linear;
+      z-index: -1; }
+    .App.theme-t2 .App-container .Username-prompt {
+      padding: 10px 20px;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+      max-height: 50px;
+      display: inline-block;
+      vertical-align: top;
+      border: solid 3px black;
+      border-right: none;
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+      font-size: 30px;
+      font-weight: bold; }
+      .App.theme-t2 .App-container .Username-prompt + button {
+        transition: all ease-in-out .01s;
+        display: inline-block;
+        height: 60px;
+        border-radius: 0 5px 5px 0;
+        border: solid 3px black;
+        border-left: none;
+        position: relative;
+        padding: 10px 20px;
+        background: forestgreen;
+        font-size: 0;
+        vertical-align: top;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+        line-height: 15px;
+        outline: none;
+        cursor: pointer; }
+        .App.theme-t2 .App-container .Username-prompt + button:before {
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 7.5px 0 7.5px 10px;
+          border-color: transparent transparent transparent white; }
+        .App.theme-t2 .App-container .Username-prompt + button:active {
+          background: green; }
+    .App.theme-t2 .App-container .Master .username, .App.theme-t2 .App-container .Player .username {
+      text-transform: capitalize; }
+    .App.theme-t2 .App-container .Game .Situation {
+      position: relative;
+      padding: 50px 15px;
+      margin: 0;
+      border: 10px solid #edb76f;
+      text-align: center;
+      color: #000000;
+      background: #fff;
+      border-radius: 20px; }
+      .App.theme-t2 .App-container .Game .Situation:before, .App.theme-t2 .App-container .Game .Situation:after {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        bottom: -40px;
+        left: calc(50px * 10%);
+        height: 30px;
+        border-style: solid;
+        border-width: 0 10px 10px 0;
+        border-color: #edb76f;
+        background: transparent;
+        display: block; }
+      .App.theme-t2 .App-container .Game .Situation:before {
+        width: 50px;
+        border-bottom-right-radius: 80px 50px; }
+      .App.theme-t2 .App-container .Game .Situation:after {
+        width: 20px;
+        border-bottom-right-radius: 40px 50px; }
+      .App.theme-t2 .App-container .Game .Situation .Dialog-bg {
+        position: absolute;
+        z-index: 0;
+        bottom: -27px;
+        left: calc(50px * 10%);
+        width: 30px;
+        height: 27px;
+        border-bottom-right-radius: 80px 50px;
+        background: white; }
+  .App.theme-t3 .App-header {
+    background-color: #222;
+    height: 50px;
+    text-align: left; }
+    .App.theme-t3 .App-header .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+      height: 100%;
+      display: inline-block; }
+    .App.theme-t3 .App-header .App-title {
+      line-height: 50px;
+      display: inline-block;
+      position: absolute;
+      text-align: center;
+      left: 0;
+      right: 0;
+      font-size: 40px; }
+  .App.theme-t3 .App-title {
+    font-family: "Lucida Console";
+    text-shadow: 1px 1px 0 black, 2px 2px 0 black, 3px 3px 0 black;
+    font-size: 4vw; }
+  .App.theme-t3 .App-container {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); }
+    .App.theme-t3 .App-container:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: repeating-linear-gradient(0deg, blue, blue 10px, #0000c7 10px, #0000c7 21.3px) top left;
+      background-size: 30px 20px;
+      animation: rotatingBg infinite 1s;
+      animation-timing-function: linear;
+      z-index: -1; }
+    .App.theme-t3 .App-container .Username-prompt {
+      padding: 10px 20px;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+      max-height: 50px;
+      display: inline-block;
+      vertical-align: top;
+      border: solid 3px black;
+      border-right: none;
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+      font-size: 30px;
+      font-weight: bold; }
+      .App.theme-t3 .App-container .Username-prompt + button {
+        transition: all ease-in-out .01s;
+        display: inline-block;
+        height: 60px;
+        border-radius: 0 5px 5px 0;
+        border: solid 3px black;
+        border-left: none;
+        position: relative;
+        padding: 10px 20px;
+        background: forestgreen;
+        font-size: 0;
+        vertical-align: top;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+        line-height: 15px;
+        outline: none;
+        cursor: pointer; }
+        .App.theme-t3 .App-container .Username-prompt + button:before {
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 7.5px 0 7.5px 10px;
+          border-color: transparent transparent transparent white; }
+        .App.theme-t3 .App-container .Username-prompt + button:active {
+          background: green; }
+    .App.theme-t3 .App-container .Master .username, .App.theme-t3 .App-container .Player .username {
+      text-transform: capitalize; }
+    .App.theme-t3 .App-container .Game .Situation {
+      position: relative;
+      padding: 50px 15px;
+      margin: 0;
+      border: 10px solid #00008a;
+      text-align: center;
+      color: #ffffff;
+      background: #fff;
+      border-radius: 20px; }
+      .App.theme-t3 .App-container .Game .Situation:before, .App.theme-t3 .App-container .Game .Situation:after {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        bottom: -40px;
+        left: calc(50px * 10%);
+        height: 30px;
+        border-style: solid;
+        border-width: 0 10px 10px 0;
+        border-color: #00008a;
+        background: transparent;
+        display: block; }
+      .App.theme-t3 .App-container .Game .Situation:before {
+        width: 50px;
+        border-bottom-right-radius: 80px 50px; }
+      .App.theme-t3 .App-container .Game .Situation:after {
+        width: 20px;
+        border-bottom-right-radius: 40px 50px; }
+      .App.theme-t3 .App-container .Game .Situation .Dialog-bg {
+        position: absolute;
+        z-index: 0;
+        bottom: -27px;
+        left: calc(50px * 10%);
+        width: 30px;
+        height: 27px;
+        border-bottom-right-radius: 80px 50px;
+        background: white; }
+  .App.theme-t4 .App-header {
+    background-color: #222;
+    height: 50px;
+    text-align: left; }
+    .App.theme-t4 .App-header .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+      height: 100%;
+      display: inline-block; }
+    .App.theme-t4 .App-header .App-title {
+      line-height: 50px;
+      display: inline-block;
+      position: absolute;
+      text-align: center;
+      left: 0;
+      right: 0;
+      font-size: 40px; }
+  .App.theme-t4 .App-title {
+    font-family: "Lucida Console";
+    text-shadow: 1px 1px 0 black, 2px 2px 0 black, 3px 3px 0 black;
+    font-size: 4vw; }
+  .App.theme-t4 .App-container {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); }
+    .App.theme-t4 .App-container:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: repeating-linear-gradient(45deg, red, red 10px, #c70000 10px, #c70000 21.3px) top left;
+      background-size: 30px 30px;
+      animation: rotatingBg infinite 1s;
+      animation-timing-function: linear;
+      z-index: -1; }
+    .App.theme-t4 .App-container .Username-prompt {
+      padding: 10px 20px;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+      max-height: 50px;
+      display: inline-block;
+      vertical-align: top;
+      border: solid 3px black;
+      border-right: none;
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+      font-size: 30px;
+      font-weight: bold; }
+      .App.theme-t4 .App-container .Username-prompt + button {
+        transition: all ease-in-out .01s;
+        display: inline-block;
+        height: 60px;
+        border-radius: 0 5px 5px 0;
+        border: solid 3px black;
+        border-left: none;
+        position: relative;
+        padding: 10px 20px;
+        background: forestgreen;
+        font-size: 0;
+        vertical-align: top;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+        line-height: 15px;
+        outline: none;
+        cursor: pointer; }
+        .App.theme-t4 .App-container .Username-prompt + button:before {
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 7.5px 0 7.5px 10px;
+          border-color: transparent transparent transparent white; }
+        .App.theme-t4 .App-container .Username-prompt + button:active {
+          background: green; }
+    .App.theme-t4 .App-container .Master .username, .App.theme-t4 .App-container .Player .username {
+      text-transform: capitalize; }
+    .App.theme-t4 .App-container .Game .Situation {
+      position: relative;
+      padding: 50px 15px;
+      margin: 0;
+      border: 10px solid #8a0000;
+      text-align: center;
+      color: #ffffff;
+      background: #fff;
+      border-radius: 20px; }
+      .App.theme-t4 .App-container .Game .Situation:before, .App.theme-t4 .App-container .Game .Situation:after {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        bottom: -40px;
+        left: calc(50px * 10%);
+        height: 30px;
+        border-style: solid;
+        border-width: 0 10px 10px 0;
+        border-color: #8a0000;
+        background: transparent;
+        display: block; }
+      .App.theme-t4 .App-container .Game .Situation:before {
+        width: 50px;
+        border-bottom-right-radius: 80px 50px; }
+      .App.theme-t4 .App-container .Game .Situation:after {
+        width: 20px;
+        border-bottom-right-radius: 40px 50px; }
+      .App.theme-t4 .App-container .Game .Situation .Dialog-bg {
         position: absolute;
         z-index: 0;
         bottom: -27px;

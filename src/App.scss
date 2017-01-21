@@ -1,3 +1,22 @@
+//$themes: aliceblue antiquewhite aqua aquamarine azure beige bisque black blanchedalmond blue blueviolet brown burlywood cadetblue chartreuse chocolate coral cornflowerblue cornsilk crimson cyan darkblue darkcyan darkgoldenrod darkgray darkgrey darkgreen darkkhaki darkmagenta darkolivegreen darkorange darkorchid darkred darksalmon darkseagreen darkslateblue darkslategray darkslategrey darkturquoise darkviolet deeppink deepskyblue dimgray dimgrey dodgerblue firebrick floralwhite forestgreen fuchsia gainsboro ghostwhite gold goldenrod gray grey green greenyellow honeydew hotpink indianred indigo ivory khaki lavender lavenderblush lawngreen lemonchiffon lightblue lightcoral lightcyan lightgoldenrodyellow lightgray lightgrey lightgreen lightpink lightsalmon lightseagreen lightskyblue lightslategray lightslategrey lightsteelblue lightyellow lime limegreen linen magenta maroon mediumaquamarine mediumblue mediumorchid mediumpurple mediumseagreen mediumslateblue mediumspringgreen mediumturquoise mediumvioletred midnightblue mintcream mistyrose moccasin navajowhite navy oldlace olive olivedrab orange orangered orchid palegoldenrod palegreen paleturquoise palevioletred papayawhip peachpuff peru pink plum powderblue purple rebeccapurple red rosybrown royalblue saddlebrown salmon sandybrown seagreen seashell sienna silver skyblue slateblue slategray slategrey snow springgreen steelblue tan teal thistle tomato turquoise transparent violet wheat white whitesmoke yellow yellowgreen;
+$themes: aliceblue antiquewhite blue red;
+
+  // Brigthness & text
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000000; // Lighter backgorund, return dark color
+  } @else {
+    @return #ffffff; // Darker background, return light color
+  }
+}
+@function set-shadow-color($color) {
+  @if (lightness($color) > 40) {
+    @return rgba(0,0,0,0.5); // Lighter backgorund, return dark color
+  } @else {
+    @return rgba(255,255,255,0.5); // Darker background, return light color
+  }
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -24,153 +43,169 @@
   font-family: 'Impact';
   font-size: 4vw;
 
-  .App-header {
-    background-color: #222;
-    height: 50px;
-    text-align: left;
+  @each $color in $themes {
+    &.theme-t#{index($themes, $color)} {
 
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-      height: 100%;
-      display: inline-block;
-    }
+      // Header
+      .App-header {
+        background-color: #222;
+        height: 50px;
+        text-align: left;
 
-    .App-title {
-      line-height: 50px;
-      display: inline-block;
-      position: absolute;
-      text-align: center;
-      left: 0;
-      right: 0;
-      font-family: "Lucida Console";
-    }
-  }
+        .App-logo {
+          animation: App-logo-spin infinite 20s linear;
+          height: 100%;
+          display: inline-block;
+        }
 
-  .App-container {
-    position: absolute;
-    top: 50px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-shadow: 1px 1px 3px black;
+        .App-title {
+          line-height: 50px;
+          display: inline-block;
+          position: absolute;
+          text-align: center;
+          left: 0;
+          right: 0;
+          font-size: 40px;
+        }
+      }
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 21.3px) top left;
-      background-size: 30px 30px;
-      animation: rotatingBg infinite 1s;
-      animation-timing-function: linear;
-      z-index: -1;
-    }
+      .App-title {
+        font-family: "Lucida Console";
+        text-shadow: 1px 1px 0 black, 2px 2px 0 black, 3px 3px 0 black;
+        font-size: 4vw;
+      }
 
-    input {
-      padding: 10px 20px;
-      border-radius: 5px 0 0 5px;
-      outline: none;
-      max-height: 50px;
-      display: inline-block;
-      vertical-align: top;
-      border: solid 3px black;
-      border-right: none;
-      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-      font-size: 30px;
-      font-weight: bold;
-
-      + button {
-        transition: all ease-in-out .01s;
-        display: inline-block;
-        height: 60px;
-        border-radius: 0 5px 5px 0;
-        border: solid 3px black;
-        border-left: none;
-        position: relative;
-        padding: 10px 20px;
-        background: forestgreen;
-        font-size: 0;
-        vertical-align: top;
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-        line-height: 15px;
-        outline: none;
-        cursor: pointer;
+      // Main container
+      .App-container {
+        position: absolute;
+        top: 50px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: set-text-color($color);
+        text-shadow: 3px 3px 3px set-shadow-color($color);
 
         &:before {
           content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          $nth: index($themes, $color);
+          background: repeating-linear-gradient(#{if($nth%2 != 0, if($nth%3 != 0, if($nth%5 != 0, 90, -45), 0), 45)}deg, $color, $color 10px, darken($color, 11%) 10px, darken($color, 11%) 21.3px) top left;
+          background-size: 30px #{if($nth%2 != 0, if($nth%3 != 0, if($nth%5 != 0, 20, 30), 20), 30)}px;
+          animation: rotatingBg infinite 1s;
+          animation-timing-function: linear;
+          z-index: -1;
+        }
+
+        // Starting input
+        .Username-prompt {
+          padding: 10px 20px;
+          border-radius: 5px 0 0 5px;
+          outline: none;
+          max-height: 50px;
           display: inline-block;
-          vertical-align: middle;
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 7.5px 0 7.5px 10px;
-          border-color: transparent transparent transparent white;
+          vertical-align: top;
+          border: solid 3px black;
+          border-right: none;
+          box-shadow: 3px 3px 3px set-shadow-color($color);
+          font-size: 30px;
+          font-weight: bold;
+
+          + button {
+            transition: all ease-in-out .01s;
+            display: inline-block;
+            height: 60px;
+            border-radius: 0 5px 5px 0;
+            border: solid 3px black;
+            border-left: none;
+            position: relative;
+            padding: 10px 20px;
+            background: forestgreen;
+            font-size: 0;
+            vertical-align: top;
+            box-shadow: 3px 3px 3px set-shadow-color($color);
+            line-height: 15px;
+            outline: none;
+            cursor: pointer;
+
+            &:before {
+              content: '';
+              display: inline-block;
+              vertical-align: middle;
+              width: 0;
+              height: 0;
+              border-style: solid;
+              border-width: 7.5px 0 7.5px 10px;
+              border-color: transparent transparent transparent white;
+            }
+
+            &:active {
+              background: green;
+            }
+          }
         }
 
-        &:active {
-          background: green;
-        }
-      }
-    }
-
-    .Master, .Player {
-      .username {
-        text-transform: capitalize;
-      }
-    }
-
-    .Game {
-      .Situation {
-        position: relative;
-        padding: 50px 15px;
-        margin: 0;
-        border: 10px solid #36366d;
-        text-align: center;
-        color: #333;
-        background: #fff;
-        border-radius: 20px;
-
-        $left: 10%;
-
-        &:before, &:after {
-          content: "";
-          position: absolute;
-          z-index: 10;
-          bottom: -40px;
-          left: calc(50px * #{$left});
-          height: 30px;
-          border-style: solid;
-          border-width: 0 10px 10px 0;
-          border-color: #36366d;
-          background: transparent;
-          display: block;
+        .Master, .Player {
+          .username {
+            text-transform: capitalize;
+          }
         }
 
-        &:before {
-          width: 50px;
-          border-bottom-right-radius: 80px 50px;
-        }
+        .Game {
+          .Situation {
+            position: relative;
+            padding: 50px 15px;
+            margin: 0;
+            border: 10px solid darken($color, 23%);
+            text-align: center;
+            color: set-text-color($color);
+            background: #fff;
+            border-radius: 20px;
 
-        &:after {
-          width: 20px;
-          border-bottom-right-radius: 40px 50px;
-        }
+            $left: 10%;
 
-        .Dialog-bg {
-          position: absolute;
-          z-index: 0;
-          bottom: -27px;
-          left: calc(50px * #{$left});
-          width: 30px;
-          height: 27px;
-          border-bottom-right-radius: 80px 50px;
-          background: white;
+            &:before, &:after {
+              content: "";
+              position: absolute;
+              z-index: 10;
+              bottom: -40px;
+              left: calc(50px * #{$left});
+              height: 30px;
+              border-style: solid;
+              border-width: 0 10px 10px 0;
+              border-color: darken($color, 23%);
+              background: transparent;
+              display: block;
+            }
+
+            &:before {
+              width: 50px;
+              border-bottom-right-radius: 80px 50px;
+            }
+
+            &:after {
+              width: 20px;
+              border-bottom-right-radius: 40px 50px;
+            }
+
+            .Dialog-bg {
+              position: absolute;
+              z-index: 0;
+              bottom: -27px;
+              left: calc(50px * #{$left});
+              width: 30px;
+              height: 27px;
+              border-bottom-right-radius: 80px 50px;
+              background: white;
+            }
+          }
         }
       }
     }
@@ -178,8 +213,6 @@
 }
 
 // Theming
-$themes: aliceblue antiquewhite aqua aquamarine azure beige bisque black blanchedalmond blue blueviolet brown burlywood cadetblue chartreuse chocolate coral cornflowerblue cornsilk crimson cyan darkblue darkcyan darkgoldenrod darkgray darkgrey darkgreen darkkhaki darkmagenta darkolivegreen darkorange darkorchid darkred darksalmon darkseagreen darkslateblue darkslategray darkslategrey darkturquoise darkviolet deeppink deepskyblue dimgray dimgrey dodgerblue firebrick floralwhite forestgreen fuchsia gainsboro ghostwhite gold goldenrod gray grey green greenyellow honeydew hotpink indianred  indigo  ivory khaki lavender lavenderblush lawngreen lemonchiffon lightblue lightcoral lightcyan lightgoldenrodyellow lightgray lightgrey lightgreen lightpink lightsalmon lightseagreen lightskyblue lightslategray lightslategrey lightsteelblue lightyellow lime limegreen linen magenta maroon mediumaquamarine mediumblue mediumorchid mediumpurple mediumseagreen mediumslateblue mediumspringgreen mediumturquoise mediumvioletred midnightblue mintcream mistyrose moccasin navajowhite navy oldlace olive olivedrab orange orangered orchid palegoldenrod palegreen paleturquoise palevioletred papayawhip peachpuff peru pink plum powderblue purple rebeccapurple red rosybrown royalblue saddlebrown salmon sandybrown seagreen seashell sienna silver skyblue slateblue slategray slategrey snow springgreen steelblue tan teal thistle tomato turquoise violet wheat white whitesmoke yellow yellowgreen;
-
 @mixin theme($properties, $theming-properties, $lighten:0, $darken:0, $plus:'') {
   @for $i from 1 through length($themes) {
     .#{nth($themes, $i)} & {
@@ -209,4 +242,3 @@ $themes: aliceblue antiquewhite aqua aquamarine azure beige bisque black blanche
     }
   }
 }
-
