@@ -16,7 +16,7 @@ const middleware = (options) => {
 
       sockets[id] = id;
 
-      ws.send(action.helloClient(JSON.stringify({ id })));
+      ws.send(JSON.stringify(actions.helloClient({ id })));
 
       ws.on('message', function incoming(message) {
         store.dispatch(JSON.parse(message));
@@ -29,7 +29,7 @@ const middleware = (options) => {
       }
 
       sockets[action.dst].send(JSON.stringify(action));
-      return next();
+      return;
     };
   };
 };

@@ -7,12 +7,12 @@ const middleware = (options) => {
   return (store) => {
     const socket = new WebSocket(`ws://${host}:${port}/`);
 
-    socket.on('open', function connection(ws) {
-      // ws.send(action.helloClient(JSON.stringify({ id })));
+    socket.addEventListener('open', function connection(ws) {
+      socket.send(JSON.stringify(actions.helloClient({})));
     });
 
-    socket.on('message', function incoming(message) {
-      store.dispatch(JSON.parse(message));
+    socket.addEventListener('message', function incoming(message) {
+      store.dispatch(JSON.parse(message.data));
     });
 
     return next => (action) => {
@@ -21,7 +21,7 @@ const middleware = (options) => {
       }
 
       socket.send(JSON.stringify(action));
-      return next();
+      return;
     };
   };
 };
