@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux'
 import { handleActions } from 'redux-actions';
-const createSagaMiddleware = require('redux-saga').default;
+import createSagaMiddleware from 'redux-saga';
 
 const sagas = require('./sagas');
 const createSocketMiddleware = require('./sockets');
