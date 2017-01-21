@@ -1,19 +1,34 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
+
+import actions from './actions';
 
 import Player from './Player/';
 import Host from './Host/';
 
-class App extends Component {
-  constructor() {
-    super();
+const mapStateToProps = ({ username }) => {
+  return {
+    username,
+  };
+};
 
-    this.state = {};
+const mapDispatchToProps = dispatch => {
+  return {
+    enterLobby: username => dispatch(actions.enterLobby(username)),
+  };
+};
+
+class App extends Component {
+  handleSubmit(e) {
+    e.preventDefault();
+    
+    this.props.enterLobby({ username: e.target['username'].value });
   }
 
   render() {
-    const { username } = this.state;
+    const { username } = this.props;
     const host = false;
 
     return (
@@ -28,14 +43,7 @@ class App extends Component {
             ? host
               ? <Host username={username} />
               : <Player username={username} />
-            : <form
-              onSubmit={e => {
-                  this.setState({ username: e.target['username'].value });
-
-                  e.preventDefault();
-                  return false;
-                }}
-            >
+            : <form onSubmit={this.handleSubmit.bind(this)}>
               <p>Please enter your username</p>
               <div>
               <input type="text" placeholder="Jean-Michel Jam" name="username" maxLength="20" autoFocus />
@@ -49,4 +57,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux';
 import { handleActions } from 'redux-actions';
 import createSagaMiddleware from 'redux-saga';
 
@@ -34,6 +35,8 @@ const store = createStore(
 sagaMiddleware.run(sagas);
 
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
