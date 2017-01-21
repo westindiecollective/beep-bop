@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     const { username } = this.props;
     const host = false;
-    const theme = 'theme-t1';
+    const theme = 'theme-t2';
 
     return (
       <div className={"App " + theme}>

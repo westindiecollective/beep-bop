@@ -98,7 +98,7 @@ $themes: aliceblue antiquewhite blue red;
           right: 0;
           $nth: index($themes, $color);
           background: repeating-linear-gradient(#{if($nth%2 != 0, if($nth%3 != 0, if($nth%5 != 0, 90, -45), 0), 45)}deg, $color, $color 10px, darken($color, 11%) 10px, darken($color, 11%) 21.3px) top left;
-          background-size: 30px #{if($nth%2 != 0, if($nth%3 != 0, if($nth%5 != 0, 20, 30), 20), 30)}px;
+          background-size: 30px 30px;
           animation: rotatingBg infinite 1s;
           animation-timing-function: linear;
           z-index: -1;

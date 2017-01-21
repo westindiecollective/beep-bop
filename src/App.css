@@ -56,7 +56,7 @@
       left: 0;
       right: 0;
       background: repeating-linear-gradient(90deg, aliceblue, aliceblue 10px, #b8deff 10px, #b8deff 21.3px) top left;
-      background-size: 30px 20px;
+      background-size: 30px 30px;
       animation: rotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
@@ -298,7 +298,7 @@
       left: 0;
       right: 0;
       background: repeating-linear-gradient(0deg, blue, blue 10px, #0000c7 10px, #0000c7 21.3px) top left;
-      background-size: 30px 20px;
+      background-size: 30px 30px;
       animation: rotatingBg infinite 1s;
       animation-timing-function: linear;
       z-index: -1; }
