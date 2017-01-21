@@ -16,7 +16,7 @@ const mapStateToProps = ({ username }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    enterLobby: username => dispatch(actions.enterLobby(username)),
+    enterLobby: username => dispatch(actions.enterLobby(null, username)),
   };
 };
 
@@ -24,7 +24,7 @@ class App extends Component {
   handleSubmit(e) {
     e.preventDefault();
     
-    this.props.enterLobby({ username: e.target['username'].value });
+    this.props.enterLobby(e.target['username'].value);
   }
 
   render() {

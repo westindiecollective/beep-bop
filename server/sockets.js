@@ -14,22 +14,25 @@ const middleware = (options) => {
     wss.on('connection', function connection(ws) {
       const key = ws.upgradeReq.headers['sec-websocket-key'];
 
-      sockets[key] = key;
+      sockets[key] = ws;
 
       ws.on('message', function incoming(message) {
+        console.log('message', message);
         const action = JSON.parse(message);
         action.meta = { key };
-        console.log(action);
         store.dispatch(action);
       });
     });
 
+
     return next => (action) => {
-      if (!action.dst) {
+      const dst = action.payload.dst;
+
+      if (!dst) {
         return next(action);
       }
 
-      sockets[action.dst].send(JSON.stringify(action));
+      sockets[dst].send(JSON.stringify(action));
       return;
     };
   };

@@ -1,9 +1,23 @@
-const { put, takeEvery } = require('redux-saga/effects');
-const { enterLobby, startGame, createLobby } = require('../src/actions');
+const { put, takeEvery, select } = require('redux-saga/effects');
+const { createLobby, addPlayer, addedToLobby } = require('../src/actions');
 
-function* enterLobby(...args) {
-  console.log(args);
-  yield put({ type: 'INCREMENT' })
+function* enterLobby({ payload, meta }) {
+  const host = yield select(state => state.host);
+  const players = yield select(state => state.players);
+
+  const { key } = meta;
+
+  if (!host) {
+    yield put(createLobby(key));
+    yield put(addedToLobby(key, 'host'));
+  } else {
+    yield put(addPlayer(key, payload.username));
+    if (!Object.keys(players).length) {
+      yield put(addedToLobby(key, 'master'));
+    } else {
+      yield put(addedToLobby(key, 'player'));
+    }
+  }
 }
 
 function* watchActions() {

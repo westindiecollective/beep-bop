@@ -6,10 +6,11 @@ module.exports = {
   startGame: createAction('START_GAME', (id) => ({ id })),
 
   // SERVER TO CLIENT
-  addedToLobby: createAction('ADDED_TO_LOBBY', (dst, key, role) => ({ dst, key, role })), 
+  addedToLobby: createAction('ADDED_TO_LOBBY', (dst, role) => ({ dst, role })), 
 
   // CLIENT
 
   // SERVER
-  createLobby: createAction('CREATE_LOBBY', (key, host_id ) => ({ key, host_id })),
+  createLobby: createAction('CREATE_LOBBY', (key) => ({ key })),
+  addPlayer: createAction('ADD_PLAYER', (key, username) => ({ key, username })),
 };

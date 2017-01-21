@@ -7,15 +7,12 @@ const middleware = options => {
   return store => {
     const socket = new WebSocket(`ws://${host}:${port}/`);
 
-    socket.addEventListener('open', function connection(ws) {
-    });
-
     socket.addEventListener('message', function incoming(message) {
       store.dispatch(JSON.parse(message.data));
     });
 
     return next => action => {
-      if (!action.outgoing) {
+      if (action.payload.outgoing) {
         socket.send(JSON.stringify(action));
       }
 
