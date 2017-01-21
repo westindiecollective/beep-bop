@@ -38,7 +38,7 @@ class App extends Component {
             >
               <p>Please enter your username</p>
               <div>
-              <input type="text" placeholder="Jean-Michel Jam" name="username" maxLength="20" autofocus />
+              <input type="text" placeholder="Jean-Michel Jam" name="username" maxLength="20" autoFocus />
               <button>Play!</button>
               </div>
             </form>
