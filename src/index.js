@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux';
 import { handleActions } from 'redux-actions';
 import createSagaMiddleware from 'redux-saga';
@@ -27,9 +27,13 @@ const reducer = handleActions({
 const sagaMiddleware = createSagaMiddleware();
 const socketMiddleware = createSocketMiddleware({ port: 4000 });
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   reducer,
-  applyMiddleware(sagaMiddleware, socketMiddleware)
+  composeEnhancers(applyMiddleware(
+    sagaMiddleware,
+    socketMiddleware
+  ))
 );
 
 sagaMiddleware.run(sagas);
