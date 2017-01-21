@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Player from './Player/';
-import Master from './Master/';
+import Host from './Host/';
 
 class App extends Component {
   constructor() {
@@ -14,7 +14,7 @@ class App extends Component {
 
   render() {
     const { username } = this.state;
-    const master = false;
+    const host = false;
 
     return (
       <div className="App">
@@ -25,8 +25,8 @@ class App extends Component {
         <div className="App-container">
         {
           username
-            ? master
-              ? <Master username={username} />
+            ? host
+              ? <Host username={username} />
               : <Player username={username} />
             : <form
               onSubmit={e => {
