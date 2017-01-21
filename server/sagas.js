@@ -1,14 +1,13 @@
-const { delay } = require('redux-saga');
 const { put, takeEvery } = require('redux-saga/effects');
+const { enterLobby, startGame, createLobby } = require('../src/actions');
 
-function* helloServer() {
-  yield delay(1000)
-  console.log('HELLO!');
+function* enterLobby(...args) {
+  console.log(args);
   yield put({ type: 'INCREMENT' })
 }
 
-function* watchIncrementAsync() {
-  yield takeEvery('HELLO_SERVER', helloServer);
+function* watchActions() {
+  yield takeEvery('ENTER_LOBBY', enterLobby);
 }
 
-module.exports = watchIncrementAsync;
+module.exports = watchActions;
