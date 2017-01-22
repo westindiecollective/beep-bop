@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Keyboard from '../Keyboard/';
 
 const urls = [
+  'bark',
   'beep',
   'bell',
   'bing',
@@ -15,6 +16,7 @@ const urls = [
   'duck2',
   'grunt',
   'horse',
+  'meow',
   'moose',
   'owl',
   'pingu',
