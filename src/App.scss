@@ -37,8 +37,10 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
   left: 0;
   right: 0;
   color: white;
-  font-family: 'Impact';
+  @import url('https://fonts.googleapis.com/css?family=Lato|Oswald');
+  font-family: 'Oswald', 'Impact', Calibri, HelveticaNeue;
   font-size: 4vw;
+  user-select: none;
 
   @each $color in $themes {
     &.theme-t#{index($themes, $color)} {
@@ -48,12 +50,6 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
         background-color: #222;
         height: 50px;
         text-align: left;
-
-        .App-logo {
-          animation: App-logo-spin infinite 20s linear;
-          height: 100%;
-          display: inline-block;
-        }
 
         .App-title {
           line-height: 50px;
@@ -67,7 +63,7 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
       }
 
       .App-title {
-        font-family: "Lucida Console";
+        font-family: 'Lato', 'Lucida Console', monospace;
         text-shadow: 1px 1px 0 black, 2px 2px 0 black, 3px 3px 0 black;
         font-size: 4vw;
       }
