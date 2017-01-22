@@ -6,7 +6,9 @@ module.exports = {
   startGame: createAction('START_GAME', (id) => ({ id })),
 
   // SERVER TO CLIENT
-  addedToLobby: createAction('ADDED_TO_LOBBY', (dst, role) => ({ dst, role })), 
+  setHost: createAction('SET_HOST', (dst) => ({ dst })),
+  addedToLobby: createAction('ADDED_TO_LOBBY', (dst, role) => ({ dst, role })),
+  updatePlayers: createAction('UPDATE_PLAYERS', (dst, players) => ({ dst, players })),
 
   // CLIENT
 

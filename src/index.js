@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
-import { handleActions } from 'redux-actions';
 import createSagaMiddleware from 'redux-saga';
 
+import reducer from './reducers';
 const sagas = require('./sagas');
 const createSocketMiddleware = require('./sockets');
 
@@ -19,19 +19,10 @@ const defaultState = {
   username: undefined,
   role: undefined,
   theme: undefined,
-};
 
-const reducer = handleActions({
-  ENTER_LOBBY: (state, { payload: { username } }) => ({
-    ...state,
-    username,
-  }),
-  ADDED_TO_LOBBY: (state, { payload: { role } }) => ({
-    ...state,
-    role,
-    theme: parseInt(Math.random() * 140),
-  }),
-}, defaultState);
+  // HOST properties
+  players: [],
+};
 
 const sagaMiddleware = createSagaMiddleware();
 const socketMiddleware = createSocketMiddleware({ port: 4000 });

@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Game from './Game';
+
+const mapStateToProps = ({ players }) => {
+  return {
+    players,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
 
 class Master extends Component {
   constructor() {
@@ -13,13 +24,8 @@ class Master extends Component {
   }
 
   render() {
+    const { players } = this.props;
     const { status } = this.state;
-    const code = 'GGJV';
-    const players = [
-      { username: 'Yoru' },
-      { username: 'Feoche' },
-      { username: 'Engleek' },
-    ];
 
     if (status === 'PLAYING') {
       return <Game />;
@@ -32,13 +38,14 @@ class Master extends Component {
           {players.map(({ username }) => <span>{username}</span>)}
         </div>
         {players.length > 2 && (
-              <button onClick={() => this.setState({ status: 'PLAYING' })}>
-                Start now!
-              </button>
-            )}
+          <button onClick={() => this.setState({ status: 'PLAYING' })}>
+            Start now!
+          </button>
+        )}
+        <p>Join now at this URL: {location.host}</p>
       </div>
     );
   }
 }
 
-export default Master;
+export default connect(mapStateToProps, mapDispatchToProps)(Master);
