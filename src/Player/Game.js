@@ -15,12 +15,10 @@ const urls = [
   'duck2',
   'grunt',
   'horse',
-  'lion',
   'moose',
   'owl',
   'pingu',
   'sheep',
-  'tiger',
   'turkey'
 ].map(name => `${process.env.PUBLIC_URL}/sounds/${name}.mp3`);
 
