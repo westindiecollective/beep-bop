@@ -1,4 +1,4 @@
-$themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque black blanchedalmond blue blueviolet brown burlywood cadetblue chartreuse chocolate coral cornflowerblue cornsilk crimson cyan darkblue darkcyan darkgoldenrod darkgray darkgrey darkgreen darkkhaki darkmagenta darkolivegreen darkorange darkorchid darkred darksalmon darkseagreen darkslateblue darkslategray darkslategrey darkturquoise darkviolet deeppink deepskyblue dimgray dimgrey dodgerblue firebrick floralwhite forestgreen fuchsia gainsboro ghostwhite gold goldenrod gray grey green greenyellow honeydew hotpink indianred indigo ivory khaki lavender lavenderblush lawngreen lemonchiffon lightblue lightcoral lightcyan lightgoldenrodyellow lightgray lightgrey lightgreen lightpink lightsalmon lightseagreen lightskyblue lightslategray lightslategrey lightsteelblue lightyellow lime limegreen linen magenta maroon mediumaquamarine mediumblue mediumorchid mediumpurple mediumseagreen mediumslateblue mediumspringgreen mediumturquoise mediumvioletred midnightblue mintcream mistyrose moccasin navajowhite navy oldlace olive olivedrab orange orangered orchid palegoldenrod palegreen paleturquoise palevioletred papayawhip peachpuff peru pink plum powderblue purple rebeccapurple red rosybrown royalblue saddlebrown salmon sandybrown seagreen seashell sienna silver skyblue slateblue slategray slategrey snow springgreen steelblue tan teal thistle tomato turquoise transparent violet wheat white whitesmoke yellow yellowgreen;
+$themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque black blanchedalmond blue blueviolet brown burlywood cadetblue chartreuse chocolate coral cornflowerblue cornsilk crimson cyan darkblue darkcyan darkgoldenrod darkgray darkgrey darkgreen darkkhaki darkmagenta darkolivegreen darkorange darkorchid darkred darksalmon darkseagreen darkslateblue darkslategray darkslategrey darkturquoise darkviolet deeppink deepskyblue dimgray dimgrey dodgerblue firebrick floralwhite forestgreen fuchsia gainsboro ghostwhite gold goldenrod gray grey green greenyellow honeydew hotpink indianred indigo ivory khaki lavender lavenderblush lawngreen lemonchiffon lightblue lightcoral lightcyan lightgoldenrodyellow lightgray lightgrey lightgreen lightpink lightsalmon lightseagreen lightskyblue lightslategray lightslategrey lightsteelblue lightyellow lime limegreen linen magenta maroon mediumaquamarine mediumblue mediumorchid mediumpurple mediumseagreen mediumslateblue mediumspringgreen mediumturquoise mediumvioletred midnightblue mintcream mistyrose moccasin navajowhite navy oldlace olive olivedrab orange orangered orchid palegoldenrod palegreen paleturquoise palevioletred papayawhip peachpuff peru pink plum powderblue purple rebeccapurple red rosybrown royalblue saddlebrown salmon sandybrown seagreen seashell sienna silver skyblue slateblue slategray slategrey snow springgreen steelblue tan teal thistle tomato turquoise transparent violet wheat whitesmoke yellow yellowgreen;
 
 
   // Brigthness & text
@@ -207,18 +207,18 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
             margin: 0;
             border: 10px solid darken($color, 23%);
             text-align: center;
-            color: set-text-color($color);
+            color: black;
             background: #fff;
             border-radius: 20px;
 
-            $left: 10%;
+            $left: #{random(65) + '%'};
 
             &:before, &:after {
               content: "";
               position: absolute;
               z-index: 10;
               bottom: -40px;
-              left: calc(50px * #{$left});
+              left: $left;
               height: 30px;
               border-style: solid;
               border-width: 0 10px 10px 0;
@@ -241,11 +241,27 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
               position: absolute;
               z-index: 0;
               bottom: -27px;
-              left: calc(50px * #{$left});
+              left: calc(#{$left} + 20px);
               width: 30px;
               height: 27px;
               border-bottom-right-radius: 80px 50px;
               background: white;
+            }
+          }
+
+          .Ingame-container {
+            .timer {
+              display: inline-block;
+              width: 10vw;
+              height: 10vw;
+              border-radius: 50%;
+              background: darken($color, 20%);
+              position: relative;
+              padding: 10px;
+
+              &.recording {
+                background: red;
+              }
             }
           }
         }
