@@ -1,35 +1,89 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+
+import actions from '../actions';
+
+function mapDispatchToProps(dispatch) {
+  return {
+    changeStatusFrom: (status) => dispatch(actions.changeStatusFrom(status)),
+  };
+}
 
 class Game extends Component {
   constructor() {
     super();
+
     this.state = {
-      timer: 90
+      timer: 20,
     };
+
     this.tick = this.tick.bind(this);
+    this.statusWillChange = this.statusWillChange.bind(this);
   }
 
   tick() {
-    this.setState({ timer: this.state.timer && (this.state.timer - 1) });
+    const newTimer = this.state.timer && (this.state.timer - 1);
+    this.setState({ timer: newTimer});
+
+    if (!newTimer) {
+      this.props.changeStatusFrom(this.props.status);
+      clearInterval(this.interval);
+    }
   }
 
   componentDidMount() {
+    this.statusWillChange(this.props.status);
+  }
+
+  componentWillReceiveProps({ status }) {
+    if (status !== this.props.status) {
+      this.statusWillChange(status);
+    }
+  }
+
+  statusWillChange(status) {
+    clearInterval(this.interval);
+    switch (status) {
+      case 'PLAYING.WARMUP':
+        this.setState({timer: 20});
+        break;
+      case 'PLAYING.ANSWERING':
+        this.setState({timer: 70});
+        break;
+      case 'PLAYING.VOTING':
+        this.setState({timer: 30});
+        break;
+    }
     this.interval = setInterval(() => this.tick(), 1000);
   }
 
   render() {
+    const { status } = this.props;
+    const { timer } = this.state;
+
+    const timerElement = timer > 0 ? (
+      <div className="timer recording">{timer}</div>
+    ) : <p>Time's up !</p>;
+
     return (
       <div className="Game">
-        <div className="Ingame-container">
-          {this.state.timer && <p>Hey, what are you waiting for?</p>}
-          {this.state.timer > 70 ? <div>Feel free to try out your sounds for this round on your device!<br/><div className="timer">{this.state.timer}</div></div> : this.state.timer? (<div><p>Now record your sounds on your device!</p><div className="timer recording">{this.state.timer}</div></div>) : (<p>Time's up !</p>)}
-        </div>
-        <div className="Votes-container">
-          {/* for each situation, repeat that */}
-        </div>
+        {(status === 'PLAYING.WARMUP' || status === 'PLAYING.ANSWERING') &&
+          <div className="Ingame-container">
+            <p>Hey, what are you waiting for?</p>
+            {status === 'PLAYING.WARMUP' && <div>Feel free to try out your sounds for this round on your device!</div>}
+            {status === 'PLAYING.ANSWERING' && <p>Now record your sounds on your device!</p>}
+            {timerElement}
+          </div>
+        }
+        {status === 'PLAYING.VOTING' &&
+          <div className="Votes-container">
+            <p>Now, time to vote!</p>
+            {timerElement}
+          </div>
+        }
       </div>
     );
   }
 }
 
-export default Game;
+export default connect(() => ({}), mapDispatchToProps)(Game);

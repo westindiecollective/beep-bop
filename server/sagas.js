@@ -1,5 +1,5 @@
 const { put, take, takeEvery, takeLatest, select } = require('redux-saga/effects');
-const { addPlayer, addedToLobby, syncPlayers, gameStarted } = require('../src/actions');
+const { addPlayer, addedToLobby, syncPlayers, gameStarted, firstQuestion, secondQuestion } = require('../src/actions');
 
 // Fisher-Yates shuffle
 function shuffle(array) {
@@ -47,8 +47,10 @@ function* startGame() {
 
   yield [].concat([host], players).map((key) => put(gameStarted(key)));
 
-  const randomizedSentences = shuffle(sentences).slice(0, Object.keys(players).length - 1);
-  const round = Object.keys(players).map((id, index) => ({
+  // wait here for CHANGE_STATUS_FROM, PLAYING.WARMUP -> PLAYING.ANSWERING ?
+
+  const randomizedSentences = shuffle(sentences).slice(0, players.length - 1);
+  const round = players.map((id, index) => ({
     id,
     firstSentence: randomizedSentences[index % sentences.length],
     firstAnswer: null,
@@ -56,14 +58,14 @@ function* startGame() {
     secondAnswer: null,
   }));
 
-  yield round.forEach(({ id, firstSentence }) => put(firstSentence(id, firstSentence )));
+  yield round.forEach(({ id, firstSentence }) => put(firstQuestion(id, firstSentence )));
 
   while (round.filter(player => player.firstAnswer === null).length > 0) {
     const { id, answer } =  take('FIRST_ANSWER');
     round.find(player => player.id === id).firstAnswer = answer;
   }
 
-  yield round.forEach(({ id, secondSentence }) => put(secondSentence(id, secondSentence )));
+  yield round.forEach(({ id, secondSentence }) => put(secondQuestion(id, secondSentence )));
 
   while (round.filter(player => player.secondAnswer === null).length > 0) {
     const { id, answer } =  take('SECOND_ANSWER');

@@ -26,8 +26,8 @@ class Host extends Component {
   render() {
     const { players, status } = this.props;
 
-    if (status === 'PLAYING') {
-      return <Game />;
+    if (status.startsWith('PLAYING')) {
+      return <Game status={status} />;
     }
 
     return (

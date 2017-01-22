@@ -2,6 +2,21 @@ const { combineReducers } =  require('redux');
 
 const host = (state = null, action) => (action.type === 'CREATE_LOBBY') ? action.payload.key : state;
 
+const status = (state = 'LOBBY', action) => {
+  if (action.type === 'CHANGE_STATUS_FROM') {
+    if (action.status === 'LOBBY') return 'PLAYING.WARMUP';
+    if (action.status === 'PLAYING.WARMUP') return 'PLAYING.ANSWERING';
+    if (action.status === 'PLAYING.ANSWERING') return 'PLAYING.VOTING';
+    if (action.status === 'PLAYING.VOTING') return 'PLAYING.WARMUP';
+  }
+
+  if (action.type === 'START_GAME') {
+    return 'PLAYING.WARMUP';
+  }
+
+  return state;
+};
+
 const players = (state = {}, action) => {
   if (action.type === 'ADD_PLAYER') {
     return Object.assign({}, state, { [action.payload.key]: {
@@ -33,6 +48,7 @@ const playerReducer = (state = {}, action) => {
 }
 
 const rootReducer = combineReducers({
+  status,
   host,
   players,
 });

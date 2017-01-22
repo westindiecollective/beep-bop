@@ -20,7 +20,7 @@ class Player extends Component {
   render() {
     const { username, role, status, startGame } = this.props;
 
-    if (status === 'PLAYING') {
+    if (status.startsWith('PLAYING')) {
       return <Game/>;
     }
 
