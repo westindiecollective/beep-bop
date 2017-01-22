@@ -201,9 +201,13 @@ $themes: aliceblue antiquewhite aqua aquamarine azure beige bisque black blanche
         }
 
         .Game {
+          position: relative;
+          max-width: 100vw;
+          max-height: 80vh;
+
           .Situation {
             position: relative;
-            padding: 50px 15px;
+            padding: 10px 0;
             margin: 0;
             border: 10px solid darken($color, 23%);
             text-align: center;
@@ -240,12 +244,37 @@ $themes: aliceblue antiquewhite aqua aquamarine azure beige bisque black blanche
             .Dialog-bg {
               position: absolute;
               z-index: 0;
-              bottom: -27px;
+              bottom: -26px;
               left: calc(#{$left} + 20px);
               width: 30px;
               height: 27px;
               border-bottom-right-radius: 80px 50px;
               background: white;
+            }
+          }
+
+          .keys {
+            position: relative;
+            margin: 10vh 0;
+
+            .key {
+              transition: all ease-in-out .1s;
+              display: inline-flex;
+              width: 12vh;
+              height: 12vh;
+              margin: 1vw;
+              background: gray;
+              border: solid 3px black;
+              position: relative;
+              top: inherit;
+              left: inherit;
+              right: inherit;
+              bottom: inherit;
+
+              &:active {
+                background: white;
+                border-color: grey;
+              }
             }
           }
 
