@@ -16,7 +16,7 @@ function* enterLobby({ payload, meta }) {
 
 function* updatePlayerList() {
   const host = yield select(state => state.host);
-  const players = yield select(state => Object.values(state.players));
+  const players = yield select(state => Object.keys(state.players).map(key => state.players[key]));
 
   yield put(updatePlayers(host, players));
 }
