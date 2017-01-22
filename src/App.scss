@@ -66,6 +66,10 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
         font-family: 'Lato', 'Lucida Console', monospace;
         text-shadow: 1px 1px 0 black, 2px 2px 0 black, 3px 3px 0 black;
         font-size: 7vw;
+
+        @media all and (min-width: 1024px) {
+          font-size: 4vw;
+        }
       }
 
       // Main container
@@ -82,6 +86,10 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
         color: set-text-color($color);
         text-shadow: 3px 3px 3px set-shadow-color($color);
         font-size: 7vw;
+
+        @media all and (min-width: 1024px) {
+          font-size: 4vw;
+        }
 
         &:before {
           content: '';
@@ -111,6 +119,10 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
           box-shadow: 3px 3px 3px set-shadow-color($color);
           font-size: 4vw;
           font-weight: bold;
+
+          @media all and (min-width: 1024px) {
+            font-size: 2vw;
+          }
 
           + button {
             transition: all ease-in-out .01s;
