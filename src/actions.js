@@ -5,7 +5,7 @@ module.exports = {
   enterLobby: createAction('ENTER_LOBBY', (id, username) => ({ id, username, outgoing: true })),
   startGame: createAction('START_GAME', (id) => ({ id, outgoing: true })),
   changeStatusFrom: createAction('CHANGE_STATUS_FROM', (status) => ({ status, outgoing: true })),
-  receiveAnswer: createAction('RECEIVE_ANSWER', (id, answer) => ({ id, answer })),
+  receiveAnswer: createAction('RECEIVE_ANSWER', (id, answer) => ({ id, answer, outgoing: true })),
 
   // SERVER TO CLIENT
   setHost: createAction('SET_HOST', (dst) => ({ dst })),

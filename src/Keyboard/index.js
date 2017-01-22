@@ -23,6 +23,8 @@ const synth = new Tone.Synth().toMaster();
 
 const propTypes = {
   url: PropTypes.string,
+  recording: PropTypes.bool,
+  sendRecording: PropTypes.func,
 };
 
 class Keyboard extends Component {
@@ -40,38 +42,23 @@ class Keyboard extends Component {
 
     this.events = [];
 
-    this.state = {
-      recording: false,
-    };
+    if (props.recording) {
+      Tone.Transport.start();
+    }
   }
 
   playSample(pitch) {
     this.sampler.triggerAttackRelease(pitch, '8n');
 
-    if (this.state.recording) {
+    if (this.props.recording) {
       const time = Tone.Time(Tone.Transport.seconds);
       this.events.push({ time: time.toNotation(), pitch });
     }
   }
 
-  record() {
-    if (this.state.recording) {
-      Tone.Transport.stop();
-      this.setState({ recording: false });
-      console.log(JSON.stringify(this.events));
-    } else {
-      Tone.Transport.start();
-      this.setState({ recording: true });
-    }
-  }
-
-  play() {
-    if (!this.state.recording) {
-      const part = new Tone.Part((time, event) => {
-        this.sampler.triggerAttackRelease(event.pitch, '8n', time);
-      }, this.events);
-      part.start(0);
-      Tone.Transport.start();
+  componentWillReceiveProps(nextProps) {
+    if (this.props.recording && !nextProps.recording) {
+      this.props.sendRecording(this.events);
     }
   }
 
