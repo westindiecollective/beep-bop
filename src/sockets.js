@@ -1,7 +1,7 @@
 const actions = require('../src/actions');
 
 const middleware = options => {
-  const host = options.host || 'localhost';
+  const host = options.host || document.location.hostname;
   const port = options.port || 4000;
 
   return store => {
