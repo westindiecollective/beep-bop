@@ -32,7 +32,7 @@ class App extends Component {
     const { username, role, theme } = this.props;
 
     return (
-      <div className={theme ? `App theme-t${theme}` : 'App theme-t11'}>
+      <div className={theme ? `App theme-t${theme}` : 'App theme-t10'}>
         <div className="App-header">
           <div className="App-title">BeepBop.</div>
         </div>

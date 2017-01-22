@@ -5,7 +5,7 @@ class Game extends Component {
     super();
     this.state = {
       timer: 90
-    }
+    };
     this.tick = this.tick.bind(this);
   }
 
