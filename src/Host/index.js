@@ -15,14 +15,14 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-const music = new Tone.Player({
-  url: `${process.env.PUBLIC_URL}/sounds/main_menu.mp3`,
-  autostart: true,
-}).toMaster();
-
-music.start();
-
 class Host extends Component {
+  componentDidMount() {
+    const music = new Tone.Player({
+      url: `${process.env.PUBLIC_URL}/sounds/main_menu.mp3`,
+      autostart: true,
+    }).toMaster();
+  }
+
   render() {
     const { players, status } = this.props;
 
