@@ -102,19 +102,19 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
           padding: 10px 20px;
           border-radius: 5px 0 0 5px;
           outline: none;
-          max-height: 50px;
+          height: 30px;
           display: inline-block;
           vertical-align: top;
           border: solid 3px black;
           border-right: none;
           box-shadow: 3px 3px 3px set-shadow-color($color);
-          font-size: 30px;
+          font-size: 4vw;
           font-weight: bold;
 
           + button {
             transition: all ease-in-out .01s;
             display: inline-block;
-            height: 60px;
+            height: 57px;
             border-radius: 0 5px 5px 0;
             border: solid 3px black;
             border-left: none;
