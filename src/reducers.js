@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 const playersReducers = (state = [], { type, payload }) => {
-  if (type === 'UPDATE_PLAYERS') {
+  if (type === 'SYNC_PLAYERS') {
     return payload.players;
   }
 

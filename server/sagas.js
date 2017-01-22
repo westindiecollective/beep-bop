@@ -1,13 +1,14 @@
 const { put, takeEvery, select } = require('redux-saga/effects');
-const { addPlayer, addedToLobby, updatePlayers } = require('../src/actions');
+const { addPlayer, addedToLobby, syncPlayers } = require('../src/actions');
 
 function* enterLobby({ payload, meta }) {
   const players = yield select(state => state.players);
 
   const { key } = meta;
+  const isLobbyEmpty = !Object.keys(players).length;
 
   yield put(addPlayer(key, payload.username));
-  if (!Object.keys(players).length) {
+  if (isLobbyEmpty) {
     yield put(addedToLobby(key, 'master'));
   } else {
     yield put(addedToLobby(key, 'player'));
@@ -18,7 +19,7 @@ function* updatePlayerList() {
   const host = yield select(state => state.host);
   const players = yield select(state => Object.keys(state.players).map(key => state.players[key]));
 
-  yield put(updatePlayers(host, players));
+  yield put(syncPlayers(host, players));
 }
 
 function* watchActions() {
