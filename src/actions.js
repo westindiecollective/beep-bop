@@ -8,7 +8,7 @@ module.exports = {
   // SERVER TO CLIENT
   setHost: createAction('SET_HOST', (dst) => ({ dst })),
   addedToLobby: createAction('ADDED_TO_LOBBY', (dst, role) => ({ dst, role })),
-  updatePlayers: createAction('UPDATE_PLAYERS', (dst, players) => ({ dst, players })),
+  syncPlayers: createAction('SYNC_PLAYERS', (dst, players) => ({ dst, players })),
 
   // CLIENT
 

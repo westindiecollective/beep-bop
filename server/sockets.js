@@ -34,12 +34,11 @@ const middleware = (options) => {
     return next => (action) => {
       const dst = action.payload.dst;
 
-      if (!dst) {
-        return next(action);
+      if (dst) {
+        sockets[dst].send(JSON.stringify(action));
       }
 
-      sockets[dst].send(JSON.stringify(action));
-      return;
+      return next(action);
     };
   };
 };

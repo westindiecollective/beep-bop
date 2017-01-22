@@ -37,9 +37,8 @@ class App extends Component {
           <div className="App-title">BeepBop.</div>
         </div>
         <div className="App-container">
-        {/*role === 'master' && <Master username={username} />*/}
-        {role === 'host' && <Host username={username} />}
-        {role === 'player' && <Player username={username} />}
+        {role === 'host' && <Host />}
+        {(role === 'player' || role === 'master') && <Player role={role} username={username} />}
         {!username &&
           <form onSubmit={this.handleSubmit.bind(this)}>
             <p>Welcome to <span className="App-title">BeepBop</span> !<br/><br/>Please enter your username</p>

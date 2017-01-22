@@ -35,13 +35,8 @@ class Master extends Component {
       <div className="Master">
         <h2>Players</h2>
         <div className="Players">
-          {players.map(({ username }) => <span>{username}</span>)}
+          {players.map(({ username, role }) => <span>{username}{role === 'master' && '🌟'}</span>)}
         </div>
-        {players.length > 2 && (
-          <button onClick={() => this.setState({ status: 'PLAYING' })}>
-            Start now!
-          </button>
-        )}
         <p>Join now at this URL: {location.host}</p>
       </div>
     );
