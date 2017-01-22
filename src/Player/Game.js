@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Keyboard from '../Keyboard/';
+
 class Game extends Component {
   render() {
     return (
@@ -8,7 +10,7 @@ class Game extends Component {
           Test
           <span className="Dialog-bg"></span>
         </div>
-
+        <Keyboard url={`${process.env.PUBLIC_URL}/sounds/duck2.mp3`} />
       </div>
     );
   }
