@@ -65,7 +65,7 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
       .App-title {
         font-family: 'Lato', 'Lucida Console', monospace;
         text-shadow: 1px 1px 0 black, 2px 2px 0 black, 3px 3px 0 black;
-        font-size: 4vw;
+        font-size: 7vw;
       }
 
       // Main container
@@ -81,6 +81,7 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
         flex-direction: column;
         color: set-text-color($color);
         text-shadow: 3px 3px 3px set-shadow-color($color);
+        font-size: 7vw;
 
         &:before {
           content: '';
