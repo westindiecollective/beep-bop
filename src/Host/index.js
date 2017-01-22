@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Tone from 'tone';
 
 import Game from './Game';
 
@@ -13,6 +14,13 @@ const mapStateToProps = ({ players, status }) => {
 const mapDispatchToProps = (dispatch) => {
   return {};
 };
+
+const music = new Tone.Player({
+  url: `${process.env.PUBLIC_URL}/sounds/main_menu.mp3`,
+  autostart: true,
+}).toMaster();
+
+music.start();
 
 class Host extends Component {
   render() {
