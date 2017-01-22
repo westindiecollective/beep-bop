@@ -5,8 +5,7 @@ module.exports = {
   enterLobby: createAction('ENTER_LOBBY', (id, username) => ({ id, username, outgoing: true })),
   startGame: createAction('START_GAME', (id) => ({ id, outgoing: true })),
   changeStatusFrom: createAction('CHANGE_STATUS_FROM', (status) => ({ status })),
-  firstAnswer: createAction('FIRST_ANSWER', (id, answer) => ({ id, answer })),
-  secondAnswer: createAction('SECOND_ANSWER', (id, answer) => ({ id, answer })),
+  receiveAnswer: createAction('RECEIVE_ANSWER', (id, answer) => ({ id, answer })),
 
   // SERVER TO CLIENT
   setHost: createAction('SET_HOST', (dst) => ({ dst })),
@@ -14,8 +13,7 @@ module.exports = {
   syncPlayers: createAction('SYNC_PLAYERS', (dst, players) => ({ dst, players })),
   gameStarted: createAction('GAME_STARTED', (dst) => ({ dst })),
   updateStatus: createAction('UPDATE_STATUS', (status) => ({ status })),
-  firstQuestion: createAction('FIRST_QUESTION', (dst, sentence) => ({ dst, sentence })),
-  secondQuestion: createAction('SECOND_QUESTION', (dst, sentence) => ({ dst, sentence })),
+  sendSentence: createAction('SEND_SENTENCE', (dst, sentence) => ({ dst, sentence })),
 
   // CLIENT
 
