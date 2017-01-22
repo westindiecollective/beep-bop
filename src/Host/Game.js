@@ -14,7 +14,7 @@ class Game extends Component {
     super();
 
     this.state = {
-      timer: 20,
+      timer: 3,
     };
 
     this.tick = this.tick.bind(this);
@@ -45,10 +45,10 @@ class Game extends Component {
     clearInterval(this.interval);
     switch (status) {
       case 'PLAYING.WARMUP':
-        this.setState({timer: 20});
+        this.setState({timer: 3});
         break;
       case 'PLAYING.ANSWERING':
-        this.setState({timer: 70});
+        this.setState({timer: 3});
         break;
       case 'PLAYING.VOTING':
         this.setState({timer: 30});

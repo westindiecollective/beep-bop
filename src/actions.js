@@ -4,7 +4,7 @@ module.exports = {
   // CLIENT TO SERVER
   enterLobby: createAction('ENTER_LOBBY', (id, username) => ({ id, username, outgoing: true })),
   startGame: createAction('START_GAME', (id) => ({ id, outgoing: true })),
-  changeStatusFrom: createAction('CHANGE_STATUS_FROM', (status) => ({ status })),
+  changeStatusFrom: createAction('CHANGE_STATUS_FROM', (status) => ({ status, outgoing: true })),
   receiveAnswer: createAction('RECEIVE_ANSWER', (id, answer) => ({ id, answer })),
 
   // SERVER TO CLIENT
@@ -12,7 +12,7 @@ module.exports = {
   addedToLobby: createAction('ADDED_TO_LOBBY', (dst, role) => ({ dst, role })),
   syncPlayers: createAction('SYNC_PLAYERS', (dst, players) => ({ dst, players })),
   gameStarted: createAction('GAME_STARTED', (dst) => ({ dst })),
-  updateStatus: createAction('UPDATE_STATUS', (status) => ({ status })),
+  updateStatus: createAction('UPDATE_STATUS', (dst, status) => ({ dst, status })),
   sendSentence: createAction('SEND_SENTENCE', (dst, sentence) => ({ dst, sentence })),
 
   // CLIENT
