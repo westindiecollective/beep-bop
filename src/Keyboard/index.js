@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Tone from 'tone';
 
 import './styles.css';
@@ -23,30 +23,39 @@ const blackkeys = [
 
 const synth = new Tone.Synth().toMaster();
 
-const sampler = new Tone.Sampler({
-  url: `${process.env.PUBLIC_URL}/sounds/duck.mp3`,
-  retrigger: true,
-}).toMaster();
+const propTypes = {
+  url: PropTypes.string,
+};
 
 class Keyboard extends Component {
+  constructor(props) {
+    super(props);
+    this.sampler = new Tone.Sampler({
+      url: props.url,
+      retrigger: true,
+    }).toMaster();
+  }
+
   render() {
     return (
       <div className="keys">
         {whitekeys.map(({ note, pitch }) => (
           <button
             className={`key white ${note[0]}`}
-            onMouseDown={() => sampler.triggerAttackRelease(pitch, '8n')}
+            onMouseDown={() => this.sampler.triggerAttackRelease(pitch, '8n')}
           />
         ))}
         {blackkeys.map(({ note, pitch }) => (
           <button
             className={`key black ${note[0]}`}
-            onMouseDown={() => sampler.triggerAttackRelease(pitch, '8n')}
+            onMouseDown={() => this.sampler.triggerAttackRelease(pitch, '8n')}
           />
         ))}
       </div>
     );
   }
 }
+
+Keyboard.propTypes = propTypes;
 
 export default Keyboard;

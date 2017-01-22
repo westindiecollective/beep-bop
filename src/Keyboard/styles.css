@@ -1,0 +1,86 @@
+.App {
+  text-align: center;
+  padding: 50px;
+}
+
+.keys {
+  position: relative;
+}
+
+.key {
+  border-radius: 5px;
+  outline: none;
+  position: absolute;
+}
+
+.black.key {
+  background: black;
+  width: 30px;
+  height: 80px;
+}
+
+.black.key.C {
+  left: 25px;
+  top: 0;
+}
+
+.black.key.D {
+  left: 65px;
+  top: 0;
+}
+
+.black.key.F {
+  left: 145px;
+  top: 0;
+}
+
+.black.key.G {
+  left: 185px;
+  top: 0;
+}
+
+.black.key.A {
+  left: 225px;
+  top: 0;
+}
+
+.white.key {
+  background: white;
+  width: 40px;
+  height: 120px;
+}
+
+.white.key.C {
+  left: 0;
+  top: 0;
+}
+
+.white.key.D {
+  left: 40px;
+  top: 0;
+}
+
+.white.key.E {
+  left: 80px;
+  top: 0;
+}
+
+.white.key.F {
+  left: 120px;
+  top: 0;
+}
+
+.white.key.G {
+  left: 160px;
+  top: 0;
+}
+
+.white.key.A {
+  left: 200px;
+  top: 0;
+}
+
+.white.key.B {
+  left: 240px;
+  top: 0;
+}
