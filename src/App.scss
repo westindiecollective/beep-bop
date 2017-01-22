@@ -1,5 +1,6 @@
 $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque black blanchedalmond blue blueviolet brown burlywood cadetblue chartreuse chocolate coral cornflowerblue cornsilk crimson cyan darkblue darkcyan darkgoldenrod darkgray darkgrey darkgreen darkkhaki darkmagenta darkolivegreen darkorange darkorchid darkred darksalmon darkseagreen darkslateblue darkslategray darkslategrey darkturquoise darkviolet deeppink deepskyblue dimgray dimgrey dodgerblue firebrick floralwhite forestgreen fuchsia gainsboro ghostwhite gold goldenrod gray grey green greenyellow honeydew hotpink indianred indigo ivory khaki lavender lavenderblush lawngreen lemonchiffon lightblue lightcoral lightcyan lightgoldenrodyellow lightgray lightgrey lightgreen lightpink lightsalmon lightseagreen lightskyblue lightslategray lightslategrey lightsteelblue lightyellow lime limegreen linen magenta maroon mediumaquamarine mediumblue mediumorchid mediumpurple mediumseagreen mediumslateblue mediumspringgreen mediumturquoise mediumvioletred midnightblue mintcream mistyrose moccasin navajowhite navy oldlace olive olivedrab orange orangered orchid palegoldenrod palegreen paleturquoise palevioletred papayawhip peachpuff peru pink plum powderblue purple rebeccapurple red rosybrown royalblue saddlebrown salmon sandybrown seagreen seashell sienna silver skyblue slateblue slategray slategrey snow springgreen steelblue tan teal thistle tomato turquoise transparent violet wheat white whitesmoke yellow yellowgreen;
 
+
   // Brigthness & text
 @function set-text-color($color) {
   @if (lightness($color) > 50) {
@@ -13,15 +14,6 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
     @return rgba(0,0,0,0.5); // Lighter backgorund, return dark color
   } @else {
     @return rgba(255,255,255,0.5); // Darker background, return light color
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 
@@ -104,7 +96,7 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
           $nth: index($themes, $color);
           background: repeating-linear-gradient(#{if($nth%2 != 0, if($nth%3 != 0, if($nth%5 != 0, -45, 90), 0), 45)}deg, $color, $color 10px, darken($color, 11%) 10px, darken($color, 11%) 21.3px) top left;
           background-size: 30px 30px;
-          animation: #{if($nth%5 != 0, "antiRotatingBg", "rotatingBg")} infinite 1s;
+          animation: #{if($nth%2 != 0, if($nth%3 != 0, if($nth%5 != 0, "antiRotatingBg", "rotatingBg"), "rotatingBg"), "rotatingBg")} infinite 1s;
           animation-timing-function: linear;
           z-index: -1;
         }
@@ -160,6 +152,42 @@ $themes: transparent aliceblue antiquewhite aqua aquamarine azure beige bisque b
         .Master, .Player {
           .username {
             text-transform: capitalize;
+          }
+        }
+
+        .Master {
+          .Players {
+            span {
+              display: inline-flex;
+              justify-content: center;
+              padding: 10px 20px;
+
+              @for $i from 1 to 20 {
+                &:nth-child(#{$i}) {
+                  transform: rotate(#{random(40) - 20}deg);
+                  color: #{nth($themes, random(140))};
+                }
+              }
+            }
+
+            + button {
+              transition: all ease-in-out .1s;
+              background: forestgreen;
+              padding: 10px 20px;
+              margin: 20px;
+              font-size: 4vw;
+              border: none;
+              border-radius: 5px;
+              outline: none;
+              color: white;
+              box-shadow: 3px 3px 3px set-shadow-color($color);
+              transform: translate(0, 0);
+              cursor: pointer;
+
+              &:active {
+                transform: translate(5px, 5px);
+              }
+            }
           }
         }
 
