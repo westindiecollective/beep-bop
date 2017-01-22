@@ -4,14 +4,24 @@ import { connect } from 'react-redux';
 import Keyboard from '../Keyboard/';
 
 const urls = [
-  'tiger',
-  'cow',
-  'duck2',
-  'horse',
-  'sheep',
-  'tiger',
+  'beep',
+  'bell',
   'bing',
   'bong',
+  'chime',
+  'cow',
+  'doorbell',
+  'duck',
+  'duck2',
+  'grunt',
+  'horse',
+  'lion',
+  'moose',
+  'owl',
+  'pingu',
+  'sheep',
+  'tiger',
+  'turkey'
 ].map(name => `${process.env.PUBLIC_URL}/sounds/${name}.mp3`);
 
 function mapStateToProps({ sentence }) {
