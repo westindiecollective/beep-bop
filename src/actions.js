@@ -13,6 +13,7 @@ module.exports = {
   addedToLobby: createAction('ADDED_TO_LOBBY', (dst, role) => ({ dst, role })),
   syncPlayers: createAction('SYNC_PLAYERS', (dst, players) => ({ dst, players })),
   gameStarted: createAction('GAME_STARTED', (dst) => ({ dst })),
+  updateStatus: createAction('UPDATE_STATUS', (status) => ({ status })),
   firstQuestion: createAction('FIRST_QUESTION', (dst, sentence) => ({ dst, sentence })),
   secondQuestion: createAction('SECOND_QUESTION', (dst, sentence) => ({ dst, sentence })),
 
