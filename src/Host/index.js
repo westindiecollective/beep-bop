@@ -32,11 +32,11 @@ class Host extends Component {
 
     return (
       <div className="Master">
-        <h2>Players</h2>
+        <p>Welcome to <span className="App-title">BeepBop</span> !<br/>{players.length? 'Here are the players today :': ''}</p>
         <div className="Players">
           {players.map(({ username, role }) => <span>{username}{role === 'master' && '🌟'}</span>)}
         </div>
-        <p>Join now at this URL: {location.host}</p>
+        <p>Join now at this URL: <span className="App-location">{location.host}</span></p>
       </div>
     );
   }

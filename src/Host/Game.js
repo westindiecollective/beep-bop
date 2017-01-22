@@ -79,6 +79,12 @@ class Game extends Component {
           <div className="Votes-container">
             <p>Now, time to vote!</p>
             {timerElement}
+            <div className="Speaker">
+              <div className="Speaker-icon"></div>
+            </div>
+            <div className="Speaker">
+              <div className="Speaker-icon"></div>
+            </div>
           </div>
         }
       </div>

@@ -1,7 +1,6 @@
 $themes: aliceblue antiquewhite aqua aquamarine azure beige bisque black blanchedalmond blue blueviolet brown burlywood cadetblue chartreuse chocolate coral cornflowerblue cornsilk crimson cyan darkblue darkcyan darkgoldenrod darkgray darkgrey darkgreen darkkhaki darkmagenta darkolivegreen darkorange darkorchid darkred darksalmon darkseagreen darkslateblue darkslategray darkslategrey darkturquoise darkviolet deeppink deepskyblue dimgray dimgrey dodgerblue firebrick floralwhite forestgreen fuchsia gainsboro ghostwhite gold goldenrod gray grey green greenyellow honeydew hotpink indianred indigo ivory khaki lavender lavenderblush lawngreen lemonchiffon lightblue lightcoral lightcyan lightgoldenrodyellow lightgray lightgrey lightgreen lightpink lightsalmon lightseagreen lightskyblue lightslategray lightslategrey lightsteelblue lightyellow lime limegreen linen magenta maroon mediumaquamarine mediumblue mediumorchid mediumpurple mediumseagreen mediumslateblue mediumspringgreen mediumturquoise mediumvioletred midnightblue mintcream mistyrose moccasin navajowhite navy oldlace olive olivedrab orange orangered orchid palegoldenrod palegreen paleturquoise palevioletred papayawhip peachpuff peru pink plum powderblue purple rebeccapurple red rosybrown royalblue saddlebrown salmon sandybrown seagreen seashell sienna silver skyblue slateblue slategray slategrey snow springgreen steelblue tan teal thistle tomato turquoise transparent violet wheat whitesmoke yellow yellowgreen;
 
-
-  // Brigthness & text
+// Brigthness & text
 @function set-text-color($color) {
   @if (lightness($color) > 50) {
     @return #000000; // Lighter backgorund, return dark color
@@ -9,11 +8,12 @@ $themes: aliceblue antiquewhite aqua aquamarine azure beige bisque black blanche
     @return #ffffff; // Darker background, return light color
   }
 }
+
 @function set-shadow-color($color) {
   @if (lightness($color) > 40) {
-    @return rgba(0,0,0,0.5); // Lighter backgorund, return dark color
+    @return rgba(0, 0, 0, 0.5); // Lighter backgorund, return dark color
   } @else {
-    @return rgba(255,255,255,0.5); // Darker background, return light color
+    @return rgba(255, 255, 255, 0.5); // Darker background, return light color
   }
 }
 
@@ -106,6 +106,10 @@ $themes: aliceblue antiquewhite aqua aquamarine azure beige bisque black blanche
           z-index: -1;
         }
 
+        .App-location {
+          color: royalblue;
+        }
+
         // Starting input
         .Username-prompt {
           padding: 10px 20px;
@@ -195,7 +199,32 @@ $themes: aliceblue antiquewhite aqua aquamarine azure beige bisque black blanche
 
               &:active {
                 transform: translate(5px, 5px);
+                background: white;
+                color: forestgreen;
               }
+            }
+          }
+        }
+
+        .Player {
+          button {
+            transition: all ease-in-out .1s;
+            background: forestgreen;
+            padding: 10px 20px;
+            margin: 20px;
+            font-size: 4vw;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            color: white;
+            box-shadow: 3px 3px 3px set-shadow-color($color);
+            transform: translate(0, 0);
+            cursor: pointer;
+
+            &:active {
+              transform: translate(5px, 5px);
+              background: white;
+              color: forestgreen;
             }
           }
         }
@@ -207,7 +236,7 @@ $themes: aliceblue antiquewhite aqua aquamarine azure beige bisque black blanche
 
           .Situation {
             position: relative;
-            padding: 10px 0;
+            padding: 10px 5px;
             margin: 0;
             border: 10px solid darken($color, 23%);
             text-align: center;
@@ -262,7 +291,7 @@ $themes: aliceblue antiquewhite aqua aquamarine azure beige bisque black blanche
               display: inline-flex;
               width: 12vh;
               height: 12vh;
-              margin: 1vw;
+              margin: 5px;
               background: gray;
               border: solid 3px black;
               position: relative;
@@ -282,8 +311,9 @@ $themes: aliceblue antiquewhite aqua aquamarine azure beige bisque black blanche
           .Ingame-container {
             .timer {
               display: inline-block;
-              width: 10vw;
-              height: 10vw;
+              width: 70px;
+              height: 70px;
+              font-size: 44px;
               border-radius: 50%;
               background: darken($color, 20%);
               position: relative;
@@ -291,6 +321,69 @@ $themes: aliceblue antiquewhite aqua aquamarine azure beige bisque black blanche
 
               &.recording {
                 background: red;
+              }
+            }
+          }
+          .Votes-container {
+            .Speaker {
+              width: 4vw;
+              height: 3vw;
+
+              .Speaker-icon {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                display: block;
+                width: 0;
+                height: 0;
+                background: none;
+                border-top: 4em solid transparent;
+                border-bottom: 4em solid transparent;
+                border-right: 5em solid #fff;
+
+                &:before {
+                  content: "";
+                  position: absolute;
+                  top: -1.3em;
+                  left: 0;
+                  width: 5.8em;
+                  height: 2.5em;
+                  background: #fff;
+                  border-radius: 3px 1.5em 1.5em 3px;
+                }
+
+                &:after {
+                  content: "";
+                  position: absolute;
+                  border-right: 0.5em solid #fff;
+                  border-radius: 50%;
+                }
+
+                &.playing:after {
+                  animation: pump 0.1s 0.1s infinite alternate;
+                }
+
+                @keyframes pump {
+                  from {
+                    top: -1.4em;
+                    right: -7em;
+                    width: 2.5em;
+                    height: 2.5em;
+                  }
+                  to {
+                    top: -1.8em;
+                    right: -8em;
+                    width: 3.5em;
+                    height: 3.5em;
+                  }
+                }
+              }
+
+              &:nth-child(1) {
+                transform: scale(1, -1)
               }
             }
           }
