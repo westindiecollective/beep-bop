@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 
 import Game from './Game';
 
-const mapStateToProps = ({ players }) => {
+const mapStateToProps = ({ players, status }) => {
   return {
     players,
+    status,
   };
 };
 
@@ -13,19 +14,9 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-class Master extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      // LOBBY, PLAYING
-      status: 'LOBBY',
-    };
-  }
-
+class Host extends Component {
   render() {
-    const { players } = this.props;
-    const { status } = this.state;
+    const { players, status } = this.props;
 
     if (status === 'PLAYING') {
       return <Game />;
@@ -43,4 +34,4 @@ class Master extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Master);
+export default connect(mapStateToProps, mapDispatchToProps)(Host);
