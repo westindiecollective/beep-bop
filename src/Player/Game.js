@@ -24,15 +24,16 @@ const urls = [
   'turkey'
 ].map(name => `${process.env.PUBLIC_URL}/sounds/${name}.mp3`);
 
-function mapStateToProps({ sentence }) {
+function mapStateToProps({ sentence, status }) {
   return {
     sentence,
+    status
   };
 }
 
 class Game extends Component {
   render() {
-    const { sentence } = this.props;
+    const { sentence, status } = this.props;
 
     return (
       <div className="Game">
@@ -40,7 +41,13 @@ class Game extends Component {
           {sentence}
           <span className="Dialog-bg"></span>
         </div>
-        <Keyboard url={urls[Math.floor(Math.random() * (urls.length - 1))]} />
+        {['PLAYING.WARMUP', 'PLAYING.ANSWERING'].includes(status) ? (
+          <Keyboard
+            url={urls[Math.floor(Math.random() * (urls.length - 1))]}
+            recording={status === 'PLAYING.ANSWERING'}
+            sendRecording={answer => this.props.dispatch(receiveAnswer({ answer }))}
+          />
+        ) : null}
       </div>
     );
   }
