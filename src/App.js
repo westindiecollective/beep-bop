@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Tone from 'tone';
 import './App.css';
 
 import actions from './actions';
@@ -20,6 +21,13 @@ const mapDispatchToProps = dispatch => {
     enterLobby: username => dispatch(actions.enterLobby(null, username)),
   };
 };
+
+const music = new Tone.Player({
+  url: `${process.env.PUBLIC_URL}/sounds/main_menu.mp3`,
+  autostart: true,
+}).toMaster();
+
+music.start();
 
 class App extends Component {
   handleSubmit(e) {
