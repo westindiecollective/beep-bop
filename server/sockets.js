@@ -14,6 +14,12 @@ const middleware = (options) => {
     wss.on('connection', function connection(ws) {
       const key = ws.upgradeReq.headers['sec-websocket-key'];
 
+      // could be moved into sagas, but running out of time
+      if (!Object.keys(sockets).length) {
+        ws.send(JSON.stringify(actions.setHost()));
+        store.dispatch(actions.createLobby(key));
+      }
+
       sockets[key] = ws;
 
       ws.on('message', function incoming(message) {
