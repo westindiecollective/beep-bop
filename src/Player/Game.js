@@ -33,9 +33,17 @@ function mapStateToProps({ sentence, status }) {
 }
 
 class Game extends Component {
+  componentWillReceiveProps(nextProps) {
+    if (this.props.status === 'PLAYING.ANSWERING' && nextProps.status === 'PLAYING.COLLECTING') {
+      const answer = this.keyboard.events;
+      console.log(answer);
+      this.props.dispatch(receiveAnswer(answer));
+    }
+  }
+
   render() {
     const { sentence, status } = this.props;
-
+    console.log(status);
     return (
       <div className="Game">
         <div className="Situation">
@@ -46,7 +54,7 @@ class Game extends Component {
           <Keyboard
             url={urls[Math.floor(Math.random() * (urls.length - 1))]}
             recording={status === 'PLAYING.ANSWERING'}
-            sendRecording={answer => this.props.dispatch(receiveAnswer({ answer }))}
+            ref={node => this.keyboard = node}
           />
         ) : null}
       </div>

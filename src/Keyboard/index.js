@@ -24,7 +24,6 @@ const synth = new Tone.Synth().toMaster();
 const propTypes = {
   url: PropTypes.string,
   recording: PropTypes.bool,
-  sendRecording: PropTypes.func,
 };
 
 class Keyboard extends Component {
@@ -37,8 +36,6 @@ class Keyboard extends Component {
     }).toMaster();
 
     this.playNote = this.playSample.bind(this);
-    this.record = this.record.bind(this);
-    this.play = this.play.bind(this);
 
     this.events = [];
 
@@ -53,12 +50,6 @@ class Keyboard extends Component {
     if (this.props.recording) {
       const time = Tone.Time(Tone.Transport.seconds);
       this.events.push({ time: time.toNotation(), pitch });
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (this.props.recording && !nextProps.recording) {
-      this.props.sendRecording(this.events);
     }
   }
 

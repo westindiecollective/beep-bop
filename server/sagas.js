@@ -49,28 +49,42 @@ function* startGame() {
 
   // wait here for CHANGE_STATUS_FROM, PLAYING.WARMUP -> PLAYING.ANSWERING ?
 
-  const randomizedSentences = shuffle(sentences).slice(0, players.length);
+  const randomizedSentences = shuffle(sentences);//.slice(0, players.length);
+  console.log(randomizedSentences);
   const round = players.map((id, index) => ({
     id,
-    firstSentence: randomizedSentences[index % sentences.length],
+    firstSentence: randomizedSentences[index % (sentences.length - 1)],
     firstAnswer: null,
-    secondSentence: randomizedSentences[(index + 1) % sentences.length],
+    secondSentence: randomizedSentences[(index + 1) % (sentences.length - 1)],
     secondAnswer: null,
   }));
 
+  console.log(JSON.stringify(round, false, 2));
+
   yield round.map(({ id, firstSentence }) => put(sendSentence(id, firstSentence )));
 
-  // while (round.filter(player => player.firstAnswer === null).length > 0) {
-  //   const { id, answer } =  take('RECEIVE_ANSWER');
-  //   round.find(player => player.id === id).firstAnswer = answer;
-  // }
+  while (round.filter(player => player.firstAnswer === null).length > 0) {
+    const { payload, meta } = yield take('RECEIVE_ANSWER');
+    const { answer } = payload;
+    const { key } = meta;
+    const player = round.find(player => player.id === key);
+    player.firstAnswer = answer;
+  }
 
-  // yield round.map(({ id, secondSentence }) => put(sendSentence(id, secondSentence )));
+  yield round.map(({ id, secondSentence }) => put(sendSentence(id, secondSentence )));
 
-  // while (round.filter(player => player.secondAnswer === null).length > 0) {
-  //   const { id, answer } =  take('RECEIVE_ANSWER');
-  //   round.find(player => player.id === id).secondAnswer = answer;
-  // }
+  while (round.filter(player => player.secondAnswer === null).length > 0) {
+    const { payload, meta } = yield take('RECEIVE_ANSWER');
+    const { answer } = payload;
+    const { key } = meta;
+    const player = round.find(player => player.id === key);
+    player.secondAnswer = answer;
+  }
+
+  yield put(sendResults(host, round));
+
+  // nextStatus = 'PLAYING.VOTING';
+  // yield [].concat([host], players).map((key) => put(updateStatus(key, nextStatus)));
 }
 
 function* changeStatus({ payload }) {
@@ -81,7 +95,7 @@ function* changeStatus({ payload }) {
   let nextStatus = 'LOBBY';
   if (payload.status === 'LOBBY') nextStatus = 'PLAYING.WARMUP';
   if (payload.status === 'PLAYING.WARMUP') nextStatus = 'PLAYING.ANSWERING';
-  if (payload.status === 'PLAYING.ANSWERING') nextStatus = 'PLAYING.VOTING';
+  if (payload.status === 'PLAYING.ANSWERING') nextStatus = 'PLAYING.COLLECTING';
   if (payload.status === 'PLAYING.VOTING') nextStatus = 'PLAYING.WARMUP';
 
   yield [].concat([host], players).map((key) => put(updateStatus(key, nextStatus)));

@@ -4,10 +4,11 @@ import Tone from 'tone';
 
 import Game from './Game';
 
-const mapStateToProps = ({ players, status }) => {
+const mapStateToProps = ({ players, status, results }) => {
   return {
     players,
     status,
+    results,
   };
 };
 
@@ -24,10 +25,10 @@ class Host extends Component {
   }
 
   render() {
-    const { players, status } = this.props;
+    const { players, status, results } = this.props;
 
     if (status.startsWith('PLAYING')) {
-      return <Game status={status} />;
+      return <Game status={status} results={results} />;
     }
 
     return (

@@ -33,4 +33,5 @@ export default combineReducers({
   theme: (state = null, action) => action.type === 'ADDED_TO_LOBBY' || action.type === 'SET_HOST' ? parseInt(Math.random() * 140) : state,
   status: (state = 'LOBBY', action) => action.type === 'GAME_STARTED' || action.type === 'UPDATE_STATUS' ? action.payload.status || 'PLAYING.WARMUP' : state,
   sentence: (state = null, action) => action.type === 'SEND_SENTENCE' ? action.payload.sentence : state,
+  results: (state = null, action) => action.type === 'SEND_RESULTS' ? action.payload.results : state,
 });

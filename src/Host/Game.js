@@ -23,7 +23,7 @@ class Game extends Component {
 
   tick() {
     const newTimer = this.state.timer && (this.state.timer - 1);
-    this.setState({ timer: newTimer});
+    this.setState({ timer: newTimer });
 
     if (!newTimer) {
       this.props.changeStatusFrom(this.props.status);
@@ -45,20 +45,20 @@ class Game extends Component {
     clearInterval(this.interval);
     switch (status) {
       case 'PLAYING.WARMUP':
-        this.setState({timer: 3});
+        this.setState({ timer: 10 });
         break;
       case 'PLAYING.ANSWERING':
-        this.setState({timer: 3});
+        this.setState({ timer: 120 });
         break;
       case 'PLAYING.VOTING':
-        this.setState({timer: 30});
+        this.setState({ timer: 60 });
         break;
     }
     this.interval = setInterval(() => this.tick(), 1000);
   }
 
   render() {
-    const { status } = this.props;
+    const { status, results } = this.props;
     const { timer } = this.state;
 
     const timerElement = timer > 0 ? (
@@ -87,6 +87,14 @@ class Game extends Component {
             </div>
           </div>
         }
+        {results ? 
+          results.map(({ firstSentence, firstAnswer, secondSentence, secondAnswer }) => (
+            <div>
+              <span>{firstSentence}</span>
+              <span>{secondSentence}</span>
+            </div>
+          ))
+        : null}
       </div>
     );
   }

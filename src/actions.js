@@ -5,7 +5,7 @@ module.exports = {
   enterLobby: createAction('ENTER_LOBBY', (id, username) => ({ id, username, outgoing: true })),
   startGame: createAction('START_GAME', (id) => ({ id, outgoing: true })),
   changeStatusFrom: createAction('CHANGE_STATUS_FROM', (status) => ({ status, outgoing: true })),
-  receiveAnswer: createAction('RECEIVE_ANSWER', (id, answer) => ({ id, answer, outgoing: true })),
+  receiveAnswer: createAction('RECEIVE_ANSWER', (answer) => ({ answer, outgoing: true })),
 
   // SERVER TO CLIENT
   setHost: createAction('SET_HOST', (dst) => ({ dst })),
@@ -14,6 +14,7 @@ module.exports = {
   gameStarted: createAction('GAME_STARTED', (dst) => ({ dst })),
   updateStatus: createAction('UPDATE_STATUS', (dst, status) => ({ dst, status })),
   sendSentence: createAction('SEND_SENTENCE', (dst, sentence) => ({ dst, sentence })),
+  sendResults: createAction('SEND_RESULTS', (dst, results) => ({ dst, results })),
 
   // CLIENT
 
